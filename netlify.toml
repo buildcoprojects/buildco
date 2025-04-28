@@ -1,0 +1,12 @@
+[build]
+  publish = "/"
+
+[[redirects]]
+  from = "/success"
+  to = "/payment-success.html"
+  status = 200
+
+[[redirects]]
+  from = "/cancelled"
+  to = "/payment-cancelled.html"
+  status = 200

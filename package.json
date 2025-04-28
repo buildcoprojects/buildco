@@ -1,0 +1,16 @@
+{
+  "name": "buildco-projects",
+  "version": "1.0.0",
+  "description": "Build Co Projects Website",
+  "private": true,
+  "scripts": {
+    "start": "npx serve",
+    "dev": "npx serve"
+  },
+  "dependencies": {
+    "stripe": "^12.0.0"
+  },
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}
