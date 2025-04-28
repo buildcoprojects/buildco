@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Co | Project Management Services</title>
+<meta content="Build Co | Project Management Services" property="og:title">
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/6696416d617685b3acb02ab7_image_2024-07-16_194620342.png">
+<link rel="apple-touch-icon" href="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/66964180617685b3acb05405_image_2024-07-16_194639214.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+    /* Base Styles */
+    :root {
+        --primary-color: #FF6B00;
+        --primary-hover: #FF8C40;
+        --dark-bg: #121212;
+        --card-bg: #1E1E1E;
+        --light-text: #FFFFFF;
+        --muted-text: #B0B0B0;
+        --border-radius: 12px;
+        --shadow: 0 10px 30px rgba(0,0,0,0.25);
+        --transition: all 0.3s ease;
+    }
+    
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body { 
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        padding: 0; 
+        margin: 0; 
+        background-color: var(--dark-bg);
+        color: var(--light-text);
+        line-height: 1.6;
+    }
+    
+    .container { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        padding: 0 20px; 
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        color: var(--light-text);
+    }
+    
+    h1 { 
+        font-size: 3.5rem; 
+        margin-bottom: 1.5rem;
+        background: linear-gradient(90deg, var(--primary-color), #FFB700);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center; 
+    }
+    
+    h2 { 
+        font-size: 2.5rem; 
+        margin-bottom: 2rem;
+        position: relative;
+        text-align: center; 
+    }
+    
+    h2:after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: var(--primary-color);
+        margin: 15px auto 0;
+        border-radius: 2px;
+    }
+    
+    h3 {
+        font-size: 1.75rem;
+        margin: 0 0 1.5rem 0;
+        color: var(--primary-color);
+    }
+    
+    p { 
+        color: var(--muted-text); 
+        line-height: 1.8; 
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+    
+    .text-highlight {
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+        position: relative;
+        padding: 120px 0 80px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    }
+    
+    .hero-section:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjRkY2QjAwIiBvcGFjaXR5PSIwLjA1Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
+        opacity: 0.2;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .hero-heading {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--light-text);
+        text-transform: uppercase;
+    }
+    
+    .scroll-indicator {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+        z-index: 10;
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateX(-50%) translateY(0);
+        }
+        40% {
+            transform: translateX(-50%) translateY(-20px);
+        }
+        60% {
+            transform: translateX(-50%) translateY(-10px);
+        }
+    }
+    
+    /* Two Column Sections */
+    .section {
+        padding: 100px 0;
+        position: relative;
+    }
+    
+    .two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+    }
+    
+    .column-content {
+        padding: 30px;
+    }
+    
+    .column-heading {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--light-text);
+        text-transform: uppercase;
+        text-align: left;
+    }
+    
+    .column-heading:after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: var(--primary-color);
+        margin: 15px 0 0;
+        border-radius: 2px;
+    }
+    
+    .column-heading.light {
+        color: var(--light-text);
+    }
+    
+    .column-text {
+        color: var(--muted-text);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .column-image-container {
+        width: 100%;
+        height: 500px;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+    }
+    
+    .column-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .bg-image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        border-radius: var(--border-radius);
+    }
+    
+    .dark-section {
+        background-color: #0a0a0a;
+    }
+    
+    .feature-list {
+        list-style: none;
+        margin: 30px 0;
+    }
+    
+    .feature-item {
+        padding: 15px 0 15px 40px;
+        position: relative;
+        font-size: 1.1rem;
+        color: var(--muted-text);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .feature-item:last-child {
+        border-bottom: none;
+    }
+    
+    .feature-item:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    
+    /* Feature Cards Section */
+    .feature-cards {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    }
+    
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+    }
+    
+    .feature-card {
+        background: linear-gradient(145deg, #232323, #1a1a1a);
+        border-radius: var(--border-radius);
+        padding: 40px 30px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(255, 107, 0, 0.1);
+        transition: var(--transition);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-10px);
+        border-color: rgba(255, 107, 0, 0.3);
+    }
+    
+    .card-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        line-height: 1.3;
+    }
+    
+    .card-image {
+        width: 100%;
+        max-height: 200px;
+        object-fit: contain;
+        margin: 20px 0;
+    }
+    
+    .card-text {
+        flex-grow: 1;
+    }
+    
+    .feature-highlight {
+        font-weight: 600;
+        color: var(--primary-color);
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .green-accent .card-title {
+        color: #4CAF50;
+    }
+    
+    .orange-accent .card-title {
+        color: var(--primary-color);
+    }
+    
+    .purple-accent .card-title {
+        color: #9C27B0;
+    }
+    
+    /* Buttons */
+    .btn { 
+        display: inline-block; 
+        background-color: var(--primary-color); 
+        color: #000; 
+        text-align: center; 
+        padding: 18px 36px; 
+        border: none; 
+        border-radius: 50px; 
+        font-weight: 600; 
+        font-size: 1rem;
+        text-transform: uppercase; 
+        letter-spacing: 1px; 
+        cursor: pointer;
+        transition: var(--transition);
+        text-decoration: none;
+    }
+    
+    .btn:hover {
+        background-color: var(--primary-hover);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+    }
+    
+    .btn-large {
+        padding: 20px 40px;
+        font-size: 1.1rem;
+    }
+    
+    .btn-center {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Footer */
+    .footer {
+        background-color: #0a0a0a;
+        padding: 80px 0 30px;
+        position: relative;
+    }
+    
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+    
+    .footer-column h4 {
+        color: var(--primary-color);
+        margin-bottom: 25px;
+        font-size: 1.2rem;
+    }
+    
+    .footer-logo {
+        max-width: 200px;
+        margin-bottom: 15px;
+    }
+    
+    .footer-info {
+        color: var(--muted-text);
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-link {
+        display: block;
+        color: var(--muted-text);
+        text-decoration: none;
+        margin-bottom: 15px;
+        transition: var(--transition);
+        font-size: 0.95rem;
+    }
+    
+    .footer-link:hover {
+        color: var(--primary-color);
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    .contact-icon {
+        width: 24px;
+        margin-right: 15px;
+    }
+    
+    .contact-text {
+        color: var(--muted-text);
+    }
+    
+    .contact-text a {
+        color: var(--muted-text);
+        text-decoration: none;
+        transition: var(--transition);
+    }
+    
+    .contact-text a:hover {
+        color: var(--primary-color);
+    }
+    
+    .legal-block {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .legal-text {
+        color: #555;
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+        transition: var(--transition);
+    }
+    
+    .social-link:hover {
+        background: var(--primary-color);
+        transform: translateY(-3px);
+    }
+    
+    .social-icon {
+        width: 20px;
+        height: 20px;
+        filter: brightness(0) invert(1);
+    }
+    
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary-color);
+        color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: var(--transition);
+        z-index: 100;
+    }
+    
+    .back-to-top.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .back-to-top:hover {
+        background-color: var(--primary-hover);
+        transform: translateY(-5px);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+        h1, .hero-heading {
+            font-size: 3rem;
+        }
+        
+        h2, .column-heading {
+            font-size: 2.2rem;
+        }
+        
+        .cards-container {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+    }
+    
+    @media (max-width: 768px) {
+        h1, .hero-heading {
+            font-size: 2.5rem;
+        }
+        
+        h2, .column-heading {
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        .section {
+            padding: 70px 0;
+        }
+        
+        .two-column {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .column-image-container {
+            height: 350px;
+        }
+        
+        .cards-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .legal-block {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            justify-content: center;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        h1, .hero-heading {
+            font-size: 2rem;
+        }
+        
+        .btn-large {
+            padding: 15px 30px;
+            font-size: 1rem;
+        }
+        
+        .column-image-container {
+            height: 250px;
+        }
+    }
+</style>
+</head>
+
+<body>
+<!-- Hero Section -->
+<section class="hero-section" id="top">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-heading">Client-Side<br>Project Management</h1>
+        </div>
+    </div>
+    <a href="#main-content" class="scroll-indicator">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="#FF6B00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+</section>
+
+<!-- Main Content Section -->
+<section id="main-content" class="section">
+    <div class="container">
+        <div class="two-column">
+            <div class="column-content">
+                <h2 class="column-heading">Safeguarding Your Interests</h2>
+                <p class="column-text"><strong>Build Co provides project management services designed to safeguard your interests throughout every stage of your construction journey.</strong></p>
+                
+                <p class="column-text">Whether you're a business owner, property investor, or developer, our team ensures your project runs smoothly from start to finish, keeping you informed and in control at every stage. We manage everything, from initial planning and permit applications to construction oversight and final handover.</p>
+                
+                <p class="column-text">Our approach is tailored to your unique needs, ensuring that timelines are met, budgets are maintained, and the highest quality standards are upheld without compromise.</p>
+                
+                <h3>Our Project Management Services are tailored for:</h3>
+                <ul class="feature-list">
+                    <li class="feature-item">Property Investors & Owner Builders</li>
+                    <li class="feature-item">Business Owners</li>
+                    <li class="feature-item">Premium Retail Brands & Franchise Networks</li>
+                </ul>
+                
+                <a href="/contact" class="btn">Get in Touch</a>
+            </div>
+            <div class="column-image-container">
+                <div class="bg-image" style="background-image: url('https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvamVjdCUyMG1hbmFnZW1lbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60');"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Feature Cards Section -->
+<section class="feature-cards">
+    <div class="container">
+        <h2>Expert Guidance For Your Next Project</h2>
+        
+        <div class="cards-container">
+            <div class="feature-card green-accent">
+                <h3 class="card-title">Reduce Cost,<br>Protect Your Investment</h3>
+                <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/66e174e0fe1ffcb1ea8da400_undraw_financial_data_re_p0fl.svg" alt="Cost Reduction" class="card-image">
+                <div class="card-text">
+                    <p>
+                        <span class="feature-highlight">Budget Management</span>
+                        Close monitoring of the budget ensures no unexpected costs arise, keeping the project financially on track.
+                    </p>
+                    <p>
+                        <span class="feature-highlight">Competitive Bidding</span>
+                        Managing the tender process secures the best prices for materials and services through competitive bidding.
+                    </p>
+                    <p>
+                        <span class="feature-highlight">Preventing Costly Delays</span>
+                        Proactive risk management and timely issue resolution help avoid expensive delays that can inflate project costs.
+                    </p>
+                    <p>
+                        <span class="feature-highlight">Change Management</span>
+                        Handling change orders effectively ensures any additional costs are justified and minimised.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="feature-card orange-accent">
+                <h3 class="card-title">Your Project<br>Delivered On-Time</h3>
+                <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/66e176e42ab6dab5a8030b6b_undraw_progress_indicator_re_4o4n.svg" alt="On-Time Delivery" class="card-image">
+                <div class="card-text">
+                    <p>
+                        <span class="feature-highlight">Precise Scheduling</span>
+                        Detailed project schedules ensure every task is completed on time, maintaining the project timeline.
+                    </p>
+                    <p>
+                        <span class="feature-highlight">Seamless Coordination</span>
+                        Coordination of all trades and suppliers ensures smooth and efficient progress, avoiding delays.
+                    </p>
+                    <p>
+                        <span class="feature-highlight">Regular Progress Checks</span>
+                        Frequent site visits and progress meetings keep the project on schedule by addressing issues promptly.
+                    </p>
+                    <p>
+                        <span class="feature-highlight">Contingency Planning</span>
+                        Developing contingency plans addresses potential delays, keeping the project timeline intact.
+                    </p>
+                    <p>
+                        <span class="feature-highlight">Swift Decision-Making</span>
+                        Quick decision-making and problem-solving prevent schedule slippage and keep the project moving forward.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="feature-card purple-accent">
+                <h3 class="card-title">Stronger Communication,<br>Better Results</h3>
+                <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/66e1758cd94640decb9b247b_undraw_team_collaboration_re_ow29.svg" alt="Better Communication" class="card-image">
+                <div class="card-text">
+                    <p>
+                        <span class="feature-highlight">Central Point of Contact</span>
+                        Serving as a single point of contact streamlines communication between clients, contractors, suppliers, and stakeholders.
+                    </p>
+                    <p>
+                        <span class="feature-highlight">Clear Communication</span>
+                        Clear and consistent communication keeps all parties well-informed and aligned with project goals.
+                    </p>
+                    <p>
+                        <span class="feature-highlight">Conflict Resolution</span>
+                        Mediating conflicts and misunderstandings ensures smooth collaboration and cooperation among all parties.
+                    </p>
+                    <p>
+                        <span class="feature-highlight">Stakeholder Management</span>
+                        Managing stakeholder expectations and requirements ensures all needs are addressed and incorporated into the project plan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/66a824eb84ef4a876979e5c6_BuildCo%20Logo_Clear-White_CroppedV2.png" alt="Build Co Projects" class="footer-logo">
+                <p class="footer-info">BUILD CO PROJECTS PTY LTD</p>
+                <p class="footer-info">ACN: 677 960 735</p>
+                <p class="footer-info">ABN: 44 677 960 735</p>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="/" class="footer-link">HOME</a></li>
+                    <li><a href="/about" class="footer-link">ABOUT</a></li>
+                    <li><a href="/construction" class="footer-link">CONSTRUCTION</a></li>
+                    <li><a href="/project-management" class="footer-link">PROJECT MANAGEMENT</a></li>
+                    <li><a href="/fixed-fee-permit-approval-packages" class="footer-link">FIXED FEE PERMITS</a></li>
+                    <li><a href="/contact" class="footer-link">CONTACT</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <div class="contact-item">
+                    <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/670c5d9478df10316f9f2e78_2.png" alt="Email" class="contact-icon">
+                    <div class="contact-text">
+                        <a href="mailto:enquiries@buildcoprojects.com.au">enquiries@buildcoprojects.com.au</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/670c5d936b16bdfbeb711eeb_1.png" alt="Phone" class="contact-icon">
+                    <div class="contact-text">
+                        <a href="tel:+61499144033">0499 144 033</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="legal-block">
+            <div class="legal-text">© 2024 Build Co Projects Pty Ltd. All Rights Reserved.</div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/build.co_projects/" target="_blank" class="social-link">
+                    <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/665310cc7940eb6122f35b56_instagram.svg" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.facebook.com/subconnectgroup" target="_blank" class="social-link">
+                    <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/665310cc7940eb6122f35b51_facebook.svg" alt="Facebook" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#top" class="back-to-top" id="backToTop">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</a>
+
+<script>
+    // Back to top button functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const backToTopButton = document.getElementById('backToTop');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add animations for feature cards
+        const featureCards = document.querySelectorAll('.feature-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { 
+            threshold: 0.1
+        });
+        
+        featureCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    });
+</script>
+</body>
+</html>

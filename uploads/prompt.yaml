@@ -1,0 +1,182 @@
+build_co_reconstruction_plan:
+  objective:
+    description: "Fully and precisely replicate www.buildcoprojects.com.au — no deviations."
+    mandates:
+      - "Static HTML hosting via Netlify"
+      - "Dual-path Stripe payment system (Buy Now + Form Submission)"
+      - "Full SEO, OpenGraph metadata, Phantom Keywords"
+      - "Correct static asset linking and page responsiveness"
+      - "Total independence from Webflow"
+    strict_mandate: |
+      Do not modify any design, layout, responsiveness, or UI elements unless:
+        (a) Necessary to exactly match live site behaviour
+        (b) Strictly required to correct critical flow issues (e.g., Stripe session errors, missing asset references)
+      No stylistic or cosmetic changes outside those bounds are authorised.
+
+deployment_steps:
+  step_1_initial_files:
+    location: "/uploads/web-assets/"
+    instruction: "Extract files into /buildco/, do not operate from /uploads/web-assets/."
+    files:
+      - Prompt.html: "Initial instructions"
+      - about.html: "About Us page"
+      - contact.html: "Contact page"
+      - construction.html: "Construction Services"
+      - fixed-fee-permit.html: "Fixed-Fee Permit Packages"
+      - home.html: "Homepage"
+      - project-management.html: "Project Management Services"
+      - main-js.js: "Main JavaScript file"
+      - universal-structure.md: "Universal Layout Notes"
+
+  step_2_rename_files:
+    rename:
+      - old: home.html
+        new: index.html
+      - old: fixed-fee-permit.html
+        new: fixed-fee-permit-packages.html
+
+  step_3_asset_inventory:
+    storage_path: "/assets/images/"
+    download_list:
+      - name: "Favicon"
+        url: "https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/6696416d617685b3acb02ab7_image_2024-07-16_194620342.png"
+      - name: "Apple Touch Icon"
+        url: "https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/66964180617685b3acb05405_image_2024-07-16_194639214.png"
+      - name: "OG Preview Image"
+        url: "https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/66e3a4821404fefff52e9dc8_Build.%20Co%20Link%20Preview.png"
+      # (continues all 28 assets as per your list)
+
+  step_4_directory_structure:
+    target_structure: |
+      buildco/
+      ├── index.html
+      ├── about.html
+      ├── construction.html
+      ├── project-management.html
+      ├── fixed-fee-permit-packages.html
+      ├── contact.html
+      ├── assets/
+      │   ├── css/
+      │   │   └── main.css (scaffolded)
+      │   ├── js/
+      │   │   └── main.js (migrated from main-js.js)
+      │   └── images/
+      ├── netlify/
+      │   └── functions/
+      │       └── createStripeCheckout.js
+
+  step_5_stripe_integration:
+    netlify_function_code: |
+      const stripe = require('stripe')('YOUR_STRIPE_SECRET_KEY');
+      exports.handler = async (event) => {
+        const { amount } = JSON.parse(event.body);
+        const session = await stripe.checkout.sessions.create({
+          payment_method_types: ['card'],
+          line_items: [{
+            price_data: {
+              currency: 'aud',
+              product_data: { name: 'Permit Package' },
+              unit_amount: amount,
+            },
+            quantity: 1,
+          }],
+          mode: 'payment',
+          success_url: 'https://www.buildcoprojects.com.au/payment-success.html',
+          cancel_url: 'https://www.buildcoprojects.com.au/payment-cancelled.html',
+        });
+        return { statusCode: 200, body: JSON.stringify({ url: session.url }) };
+      }
+    frontend_linkage: "Frontend buttons wired via assets/js/main.js"
+
+  step_5_1_form_dynamic_checkout:
+    form_integration:
+      description: |
+        Fixed Fee Permit Approval Packages page includes a live form.
+        Form calculates final amount based on selected project type and optional extras:
+          - Priority Processing +$1,500
+          - Expired Permit +$750
+          - Bushfire Prone Area +$500
+          - Heritage Overlay +$500
+      stripe_checkout_flow: |
+        1. User selects options → Total amount updated live
+        2. On submit → POST { amount: totalInCents } to /.netlify/functions/createStripeCheckout
+        3. Redirect user to live Stripe checkout
+
+    code_snippet_frontend: |
+      document.querySelector('.stripe-btn').addEventListener('click', async () => {
+        const totalAmount = getTotalAmountFromForm();
+        const response = await fetch('/.netlify/functions/createStripeCheckout', {
+          method: 'POST',
+          body: JSON.stringify({ amount: totalAmount }),
+        });
+        const session = await response.json();
+        window.location.href = session.url;
+      });
+
+    important_notes:
+      - "Stripe amount must always be sent in cents."
+      - "$7,500 becomes 750000 cents."
+
+dual_payment_pathways:
+  direct_buy_now_buttons:
+    - No form involved
+    - Triggers pre-set Stripe Checkout amounts:
+      - Residential Extension: $7,500 → 750000c
+      - New Dwelling: $14,500 → 1450000c
+      - Complex/Industrial: $22,400 → 2240000c
+    - Immediate checkout redirect on click
+
+  form_submission_checkout:
+    - Full project form filled
+    - Dynamic total calculated
+    - Form submission POSTs to Stripe
+    - User redirected to dynamic Stripe Checkout session
+
+dual_path_summary:
+  - method: "Buy Now Buttons"
+    form_involved: "No"
+    payment_flow: "Instant checkout"
+  - method: "Form Submission"
+    form_involved: "Yes"
+    payment_flow: "Capture + Stripe checkout"
+
+netlify_setup:
+  netlify_toml: |
+    [build]
+    publish = "/"
+    
+    [[redirects]]
+    from = "/success"
+    to = "/payment-success.html"
+    status = 200
+
+    [[redirects]]
+    from = "/cancelled"
+    to = "/payment-cancelled.html"
+    status = 200
+  deploy_command: "netlify deploy --dir=\"buildco\" --prod"
+  project_root: "/buildco"
+
+final_critical_checklist:
+  - "Extract files to main directory ✅"
+  - "Rename files correctly ✅"
+  - "Organize into clean /assets/ structure ✅"
+  - "Download and link images locally ✅"
+  - "Insert unified header, nav, footer ✅"
+  - "Inject SEO metadata and JSON-LD ✅"
+  - "Integrate Stripe checkout buttons ✅"
+  - "Deploy to Netlify ✅"
+
+task_status:
+  - task: "Files extracted, renamed, cleaned"
+    status: "✅"
+  - task: "Assets downloaded, linked properly"
+    status: "✅"
+  - task: "Stripe Buy Now buttons wired"
+    status: "✅"
+  - task: "Form-driven checkout pending"
+    status: "🔶"
+  - task: "SEO metadata injected"
+    status: "✅"
+  - task: "Netlify ready"
+    status: "✅"
