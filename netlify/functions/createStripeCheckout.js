@@ -1,5 +1,5 @@
 // This is a Netlify serverless function that creates a Stripe Checkout session
-const stripe = require('stripe')('YOUR_STRIPE_SECRET_KEY');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 exports.handler = async (event) => {
   // Only allow POST requests
@@ -11,7 +11,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { amount } = JSON.parse(event.body);
+    const { amount, packageName, customerId } = JSON.parse(event.body);
 
     // Validate amount
     if (!amount || amount <= 0) {
@@ -21,22 +21,32 @@ exports.handler = async (event) => {
       };
     }
 
+    // Get origin for success and cancel URLs
+    const origin = event.headers.origin || 'https://www.buildcoprojects.com.au';
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [{
         price_data: {
           currency: 'aud',
-          product_data: { name: 'Permit Package' },
+          product_data: {
+            name: packageName || 'Permit Package',
+            description: 'Build Co Fixed Fee Permit Package'
+          },
           unit_amount: amount,
         },
         quantity: 1,
       }],
       mode: 'payment',
-      success_url: 'https://www.buildcoprojects.com.au/payment-success.html',
-      cancel_url: 'https://www.buildcoprojects.com.au/payment-cancelled.html',
+      customer_email: customerId,
+      success_url: `${origin}/payment-success.html`,
+      cancel_url: `${origin}/payment-cancelled.html`,
     });
 
-    return { statusCode: 200, body: JSON.stringify({ url: session.url }) };
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ url: session.url })
+    };
   } catch (error) {
     console.error('Stripe error:', error);
 

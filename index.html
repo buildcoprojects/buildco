@@ -3,1503 +3,524 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixed Fee Permit Solutions | Build Co Projects</title>
+    <title>BUILD CO PROJECTS | Melbourne Construction & Project Management</title>
+    <meta name="description" content="Professional construction and project management services across Melbourne. Specializing in residential extensions, new builds, and fixed-fee permit packages.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.buildcoprojects.com.au/">
+    <meta property="og:title" content="BUILD CO PROJECTS | Melbourne Construction & Project Management">
+    <meta property="og:description" content="Professional construction and project management services across Melbourne. Specializing in residential extensions, new builds, and fixed-fee permit packages.">
+    <meta property="og:image" content="./assets/images/build-co-preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.buildcoprojects.com.au/">
+    <meta property="twitter:title" content="BUILD CO PROJECTS | Melbourne Construction & Project Management">
+    <meta property="twitter:description" content="Professional construction and project management services across Melbourne. Specializing in residential extensions, new builds, and fixed-fee permit packages.">
+    <meta property="twitter:image" content="./assets/images/build-co-preview.png">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "BUILD CO PROJECTS",
+      "image": "./assets/images/buildco-logo.png",
+      "url": "https://www.buildcoprojects.com.au",
+      "telephone": "+61499144033",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Melbourne",
+        "addressRegion": "VIC",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -37.8136,
+        "longitude": 144.9631
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/buildcoprojects",
+        "https://www.instagram.com/buildcoprojects"
+      ]
+    }
+    </script>
+
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="./assets/css/components.css">
+
     <style>
-        /* Base Styles */
-        :root {
-            --primary-color: #FF6B00;
-            --primary-hover: #FF8C40;
-            --dark-bg: #121212;
-            --card-bg: #1E1E1E;
-            --light-text: #FFFFFF;
-            --muted-text: #B0B0B0;
-            --border-radius: 12px;
-            --shadow: 0 10px 30px rgba(0,0,0,0.25);
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body { 
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            padding: 0; 
-            margin: 0; 
-            background-color: var(--dark-bg);
-            color: var(--light-text);
-            line-height: 1.6;
-        }
-        
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 20px; 
-        }
-        
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: var(--light-text);
-        }
-        
-        h1 { 
-            font-size: 3.5rem; 
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, var(--primary-color), #FFB700);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center; 
-        }
-        
-        h2 { 
-            font-size: 2.5rem; 
-            margin-bottom: 2rem;
-            position: relative;
-            text-align: center; 
-        }
-        
-        h2:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--primary-color);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-        
-        h3 {
-            font-size: 1.75rem;
-            margin: 0 0 1.5rem 0;
-            color: var(--primary-color);
-        }
-        
-        p { 
-            color: var(--muted-text); 
-            line-height: 1.8; 
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        .text-highlight {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        
-        /* Header & Navigation */
-        .header {
-            background-color: rgba(18, 18, 18, 0.95);
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            backdrop-filter: blur(10px);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--light-text);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--primary-color);
-        }
-        
-        .nav-cta {
-            background-color: var(--primary-color);
-            color: #000;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .nav-cta:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-        }
-        
-        /* Sections */
-        .section { 
-            margin: 100px 0; 
-            padding: 0;
-        }
-        
-        .card {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            padding: 40px;
-            margin-bottom: 30px;
-            transition: var(--transition);
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        
+        /* Home Page Specific Styles */
+
         /* Hero Section */
         .hero-section {
             position: relative;
-            padding: 100px 0 100px; /* Adjusted padding to account for removed navbar */
+            padding: 120px 0 80px;
+            background-color: #141312;
             overflow: hidden;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
         }
-        
-        .hero-section:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjRkY2QjAwIiBvcGFjaXR5PSIwLjA1Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
-            opacity: 0.2;
-        }
-        
+
         .hero-content {
-            position: relative;
-            z-index: 1;
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
-        
+
         .tagline {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
+            color: #FF6B00;
+            font-size: 16px;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
-        
+
+        h1 {
+            font-size: 54px;
+            margin-bottom: 30px;
+            color: white;
+        }
+
         .hero-description {
-            font-size: 1.4rem;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            color: var(--muted-text);
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 40px;
         }
-        
-        /* Packages Section */
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .package-card {
-            background: linear-gradient(145deg, #232323, #1a1a1a);
-            border-radius: var(--border-radius);
-            padding: 40px 30px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 107, 0, 0.1);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .package-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 107, 0, 0.3);
-        }
-        
-        .package-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--primary-color);
-        }
-        
-        .package-name {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--light-text);
-        }
-        
-        .package-price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .package-description {
-            margin-bottom: 20px;
-            color: var(--muted-text);
-            flex-grow: 1;
-        }
-        
-        .package-features {
-            list-style-type: none;
-            margin: 0 0 30px 0;
-            padding: 0;
-        }
-        
-        .package-features li {
-            padding: 10px 0 10px 30px;
-            position: relative;
-            color: var(--muted-text);
-        }
-        
-        .package-features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-        
-        .package-timeline {
-            background-color: rgba(255, 107, 0, 0.1);
-            padding: 10px 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            text-align: center;
-            border: 1px solid rgba(255, 107, 0, 0.2);
-        }
-        
-        .package-timeline p {
-            margin: 0;
-            color: var(--light-text);
-            font-weight: 500;
-        }
-        
-        /* Features Section */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .feature {
-            background: linear-gradient(145deg, #232323, #1a1a1a);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            text-align: center;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 107, 0, 0.05);
-        }
-        
-        .feature:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 107, 0, 0.2);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
+
+        .btn {
             display: inline-block;
-            background: rgba(255, 107, 0, 0.1);
+            padding: 14px 28px;
+            background-color: #FF6B00;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e05a00;
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 18px;
+        }
+
+        .scroll-indicator {
+            display: block;
+            margin: 60px auto 0;
+            width: 30px;
+            height: 50px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .scroll-indicator:before {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid #FF6B00;
+            border-bottom: 2px solid #FF6B00;
+            transform: rotate(45deg);
+            margin: 0 auto;
+            animation: scroll-down 2s infinite;
+        }
+
+        @keyframes scroll-down {
+            0% { transform: rotate(45deg) translate(0, 0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: rotate(45deg) translate(10px, 10px); opacity: 0; }
+        }
+
+        /* Services Section */
+        .section {
+            padding: 100px 0;
+        }
+
+        h2 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .service-card {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card img {
             width: 80px;
             height: 80px;
-            line-height: 80px;
-            border-radius: 50%;
+            margin-bottom: 20px;
         }
-        
-        .feature h4 {
-            color: var(--light-text);
-            font-size: 1.4rem;
-            margin: 0 0 15px 0;
+
+        .service-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: white;
         }
-        
-        .feature p {
-            margin: 0;
-            color: var(--muted-text);
+
+        .service-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
         }
-        
-        /* Process Steps */
-        .process {
-            margin-top: 60px;
+
+        .btn-center {
+            display: block;
+            margin: 0 auto;
+            width: fit-content;
         }
-        
-        .steps { 
+
+        /* Two Column Section */
+        .two-column {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-            counter-reset: step-counter;
-        }
-        
-        .step { 
-            background: linear-gradient(145deg, #232323, #1a1a1a);
-            padding: 40px 30px 30px;
-            border-radius: var(--border-radius);
-            position: relative;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 107, 0, 0.05);
-        }
-        
-        .step:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 107, 0, 0.2);
-        }
-        
-        .step:before {
-            counter-increment: step-counter;
-            content: counter(step-counter);
-            position: absolute;
-            top: -20px;
-            left: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--primary-color);
-            color: #000;
-            border-radius: 50%;
-            display: flex;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
             align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.4rem;
-            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
         }
-        
-        .step h4 { 
-            margin: 0 0 20px 0; 
-            color: var(--light-text);
-            font-size: 1.4rem;
+
+        .two-column.reversed {
+            grid-template-columns: 1fr 1fr;
         }
-        
-        .step p {
-            color: var(--muted-text);
-            margin: 0;
+
+        .column-image img {
+            width: 100%;
+            border-radius: 8px;
         }
-        
+
+        .column-content h2 {
+            text-align: left;
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+
+        .column-content p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .text-highlight {
+            color: #FF6B00;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            padding: 0;
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .feature-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background-color: #FF6B00;
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+
+        .feature-heading {
+            display: block;
+            color: #FF6B00;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .dark-section {
+            background-color: #0f0f0f;
+        }
+
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, rgba(255, 107, 0, 0.05) 100%);
             padding: 80px 0;
-            margin: 100px 0;
-            border-radius: var(--border-radius);
+            background-color: #1a1a1a;
             position: relative;
             overflow: hidden;
         }
-        
+
         .cta-section:before {
             content: '';
             position: absolute;
-            width: 300px;
-            height: 300px;
-            background: var(--primary-color);
-            filter: blur(150px);
-            opacity: 0.2;
-            top: -50px;
-            right: -50px;
-            border-radius: 50%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 107, 0, 0.1), transparent);
         }
-        
+
         .cta-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .cta-heading {
-            font-size: 2.5rem;
+            font-size: 36px;
             margin-bottom: 20px;
-            color: var(--light-text);
+            color: white;
         }
-        
+
         .cta-text {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            color: var(--muted-text);
-        }
-        
-        /* Form Elements */
-        .form-section {
-            background: linear-gradient(145deg, #232323, #1a1a1a);
-            border-radius: var(--border-radius);
-            padding: 60px;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 107, 0, 0.1);
-        }
-        
-        .form-section:before {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: var(--primary-color);
-            filter: blur(200px);
-            opacity: 0.05;
-            top: -200px;
-            left: -200px;
-            border-radius: 50%;
-        }
-        
-        .form-header {
-            text-align: center;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 40px;
         }
-        
-        .form-tagline {
-            color: var(--primary-color);
-            font-size: 1.1rem;
+
+        /* Service Area */
+        .service-area {
+            background-color: #141312;
+        }
+
+        .service-area-content {
+            max-width: 600px;
+        }
+
+        .service-area-content h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .service-area-content p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-link {
+            color: #FF6B00;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-        
-        form {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .form-row {
-            margin-bottom: 25px;
-        }
-        
-        .form-columns {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        
-        label { 
-            margin-bottom: 10px; 
-            display: block; 
-            font-size: 0.9rem;
-            color: var(--muted-text); 
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-        
-        input, select, textarea { 
-            width: 100%; 
-            padding: 16px; 
-            background: rgba(255, 255, 255, 0.05); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            border-radius: 8px; 
-            margin-top: 5px; 
-            color: var(--light-text); 
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-        
-        input:focus, select:focus, textarea:focus {
-            border-color: var(--primary-color);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
-        }
-        
-        .checkbox-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 10px;
-        }
-        
-        .checkbox-label { 
-            display: flex; 
-            align-items: center;
-            text-transform: none;
-            color: var(--muted-text);
-            font-size: 0.95rem;
-            font-weight: 400;
-            padding: 12px 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-            margin: 0;
-        }
-        
-        .checkbox-label:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        input[type="checkbox"] { 
-            width: auto; 
-            margin-right: 10px; 
-            transform: scale(1.2);
-        }
-        
-        .quantity-input {
-            display: flex;
-            align-items: center;
-            margin-top: 10px;
-        }
-        
-        .quantity-input button {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 107, 0, 0.2);
-            border: none;
-            color: var(--light-text);
-            font-size: 1.2rem;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-        
-        .quantity-input button:hover {
-            background: rgba(255, 107, 0, 0.4);
-        }
-        
-        .quantity-input input {
-            width: 60px;
-            text-align: center;
-            margin: 0 10px;
-            padding: 8px;
-        }
-        
-        /* Buttons */
-        .btn { 
-            display: inline-block; 
-            background-color: var(--primary-color); 
-            color: #000; 
-            text-align: center; 
-            padding: 18px 36px; 
-            border: none; 
-            border-radius: 50px; 
-            font-weight: 600; 
-            font-size: 1rem;
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            cursor: pointer;
-            transition: var(--transition);
             text-decoration: none;
         }
-        
-        .btn:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+
+        .contact-link:hover {
+            text-decoration: underline;
         }
-        
-        .btn-large {
-            padding: 20px 40px;
-            font-size: 1.1rem;
-        }
-        
-        .btn-center {
-            display: block;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .btn-full {
-            width: 100%;
-        }
-        
-        /* Benefits list */
-        .benefits-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 40px 0;
-        }
-        
-        .benefits-list li {
-            padding: 15px 0 15px 40px;
-            position: relative;
-            font-size: 1.1rem;
-            color: var(--muted-text);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .benefits-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .benefits-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        /* Fee Summary */
-        .fee-summary {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .fee-summary h3 {
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        
-        .fee-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .fee-row:last-child {
-            border-bottom: none;
-        }
-        
-        .fee-total {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 2px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        /* Tailored pricing banner */
-        .site-visit-banner {
-            background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, rgba(255, 107, 0, 0.05) 100%);
-            padding: 20px;
-            border-radius: 12px;
-            margin: 0 0 40px 0;
-            display: flex;
-            align-items: center;
-            border: 1px solid rgba(255, 107, 0, 0.15);
-        }
-        
-        .banner-icon {
-            font-size: 2rem;
-            margin-right: 20px;
-            background: rgba(255, 107, 0, 0.1);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        
-        .banner-content {
-            flex-grow: 1;
-        }
-        
-        .banner-content h4 {
-            color: var(--light-text);
-            margin-bottom: 5px;
-        }
-        
-        .banner-content p {
-            color: var(--muted-text);
-            margin-bottom: 0;
-        }
-        
-        .banner-arrow {
-            margin-left: 20px;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 107, 0, 0.1);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .banner-arrow:hover {
-            background: rgba(255, 107, 0, 0.2);
-            transform: translateY(3px);
-        }
-        
-        .tailored-pricing-banner {
-            background: linear-gradient(135deg, rgba(255, 107, 0, 0.2) 0%, rgba(255, 107, 0, 0.1) 100%);
-            padding: 30px;
-            border-radius: 12px;
-            margin: 20px 0 50px 0;
-            text-align: center;
-            border: 1px solid rgba(255, 107, 0, 0.2);
-            position: relative;
-        }
-        
-        .tailored-pricing-banner h4 {
-            color: var(--light-text);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-        
-        .tailored-pricing-banner p {
-            color: var(--muted-text);
-            margin-bottom: 15px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .banner-arrow-large {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: var(--primary-color);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .banner-arrow-large:hover {
-            background: var(--primary-hover);
-            transform: translateY(5px);
-        }
-        
-        /* Footer */
-        .footer {
-            margin-top: 100px;
-            padding: 60px 0 30px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .footer:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--primary-color);
-            border-radius: 3px;
-        }
-        
-        .footer-content {
-            color: var(--muted-text);
-            font-size: 0.9rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 1024px) {
+
+        /* Media Queries */
+        @media (max-width: 991px) {
             h1 {
-                font-size: 3rem;
+                font-size: 40px;
             }
-            
-            h2 {
-                font-size: 2.2rem;
+
+            .two-column, .two-column.reversed {
+                grid-template-columns: 1fr;
             }
-            
-            .hero-section {
-                padding: 140px 0 80px;
-            }
-            
-            .packages-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
-            h3 {
-                font-size: 1.5rem;
-            }
-            
+
             .section {
-                margin: 70px 0;
-            }
-            
-            .hero-section {
-                padding: 120px 0 60px;
-            }
-            
-            .hero-description {
-                font-size: 1.2rem;
-            }
-            
-            .form-section {
-                padding: 40px 30px;
-            }
-            
-            .form-columns {
-                grid-template-columns: 1fr;
-            }
-            
-            .packages-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
-            
-            .steps {
-                grid-template-columns: 1fr;
+                padding: 80px 0;
             }
         }
-        
-        @media (max-width: 480px) {
+
+        @media (max-width: 767px) {
             h1 {
-                font-size: 2rem;
+                font-size: 32px;
             }
-            
-            .btn-large {
-                padding: 15px 30px;
-                font-size: 1rem;
+
+            h2 {
+                font-size: 28px;
             }
-            
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
+
+            .service-grid {
+                grid-template-columns: 1fr;
             }
-            
+
             .hero-section {
-                padding: 100px 0 50px;
-            }
-            
-            .form-section {
-                padding: 30px 20px;
+                padding: 100px 0 60px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <section class="hero-section">
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <section class="hero-section">
+        <div class="container">
             <div class="hero-content">
-                <div class="tagline">Professional Permit Solutions</div>
-                <h1>Fixed Fee Permit Approvals</h1>
-                <p class="hero-description">Get your construction permits approved faster with our transparent fixed-fee packages. No hidden costs. No surprises. Just results.</p>
-                <a href="#packages" class="btn btn-large">View Packages</a>
+                <div class="tagline">Professional Project Solutions</div>
+                <h1>Project & Development Management</h1>
+                <p class="hero-description">Managing every detail from planning and design to construction and delivery for civil, domestic & commercial projects.</p>
+                <a href="#services" class="btn btn-large">Explore Our Services</a>
             </div>
-        </section>
+        </div>
+        <a href="#services" class="scroll-indicator"></a>
+    </section>
 
-        <!-- Benefits Section -->
-        <section class="section">
-            <h2>Why Choose Our Fixed Fee Approach</h2>
-            <p class="text-center">Our transparent pricing model eliminates the typical frustrations of permit processes, giving you certainty from day one.</p>
-            
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">⏱️</div>
-                    <h4>40% Faster Approvals</h4>
-                    <p>Our streamlined process and council relationships accelerate your project timeline significantly.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">💰</div>
-                    <h4>Zero Hidden Costs</h4>
-                    <p>One transparent fee covers everything from submission to approval. What we quote is what you pay.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🛡️</div>
-                    <h4>Reduced Risk</h4>
-                    <p>Our expert team minimizes rejection risks through thorough preparation and council negotiation.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🤝</div>
-                    <h4>Single Point Contact</h4>
-                    <p>Work with one dedicated specialist who handles every aspect of your permit journey.</p>
-                </div>
-            </div>
-            
-            <ul class="benefits-list">
-                <li><strong class="text-highlight">Transparent pricing</strong> – Fixed costs established upfront so you can budget with confidence.</li>
-                <li><strong class="text-highlight">Expert coordination</strong> – We handle all surveys, energy reports, engineering specifications, and planning overlays.</li>
-                <li><strong class="text-highlight">Council negotiation</strong> – Professional handling of all RFI responses and stakeholder interactions to minimize delays.</li>
-                <li><strong class="text-highlight">Complete documentation</strong> – Every required document prepared to exacting standards for smoother approvals.</li>
-                <li><strong class="text-highlight">Regular updates</strong> – Stay informed with consistent progress reports throughout the entire process.</li>
-            </ul>
-        </section>
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Ensuring Excellence from Start to Finish</h2>
+            <p class="text-center">At Build Co, we provide comprehensive management services for the entire project lifecycle.</p>
 
-        <!-- Packages Section -->
-        <section class="section" id="packages">
-            <h2>Our Fixed Fee Packages</h2>
-            <p class="text-center">Choose the package that best fits your project needs. All packages include complete permit management from start to finish.</p>
-            
-            <!-- Site Visit Notice Banner -->
-            <div class="site-visit-banner">
-                <div class="banner-icon">📍</div>
-                <div class="banner-content">
-                    <h4>Important Notice: Site Visits</h4>
-                    <p>Our standard packages include site visits for Victorian projects only. Interstate clients can select our site visit add-on in the checkout form.</p>
+            <div class="service-grid">
+                <div class="service-card">
+                    <img src="./assets/images/project-initiation.svg" alt="Project Initiation">
+                    <h3 class="service-title">Project Initiation</h3>
+                    <p class="service-description">Aligning client vision, defining goals, and setting clear project objectives. We establish the foundation for successful project delivery from day one.</p>
                 </div>
-                <a href="#get-started" class="banner-arrow">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 10L12 15L17 10" stroke="#FF6B00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
+
+                <div class="service-card">
+                    <img src="./assets/images/pre-construction.svg" alt="Pre-Construction">
+                    <h3 class="service-title">Pre-Construction</h3>
+                    <p class="service-description">Comprehensive planning, design coordination, and securing necessary approvals. We prepare every detail before breaking ground to ensure smooth execution.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="./assets/images/construction.svg" alt="Construction">
+                    <h3 class="service-title">Construction</h3>
+                    <p class="service-description">On-site management, quality assurance, and stakeholder communication. We oversee every aspect of construction to deliver exceptional results on time and on budget.</p>
+                </div>
             </div>
 
-            <!-- Custom Solution Banner -->
-            <div class="tailored-pricing-banner">
-                <h4>Need a Tailored Package?</h4>
-                <p>Our standard packages not quite right? Complete the checkout form below and select "custom quote" to receive a tailored solution specific to your project's requirements.</p>
-                <a href="#get-started" class="banner-arrow-large">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 10L12 15L17 10" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-            </div>
-            
-            <div class="packages-grid">
-                <div class="package-card">
-                    <h3 class="package-name">Residential Extension</h3>
-                    <div class="package-price">$7,500</div>
-                    <p class="package-description">Perfect for home renovations, extensions, and smaller residential modifications.</p>
-                    
-                    <div class="package-timeline">
-                        <p>Typical Timeline: 6-8 weeks</p>
-                    </div>
-                    
-                    <ul class="package-features">
-                        <li>Full planning and building permit management</li>
-                        <li>Council liaison and negotiations</li>
-                        <li>Documentation preparation and coordination</li>
-                        <li>Early stage coordination with architect and other consultants</li>
-                        <li>RFI (Request for Information) responses</li>
-                        <li>Building surveyor coordination</li>
+            <a href="project-management.html" class="btn btn-center">Learn More About Our Process</a>
+        </div>
+    </section>
+
+    <section class="section dark-section">
+        <div class="container">
+            <div class="two-column">
+                <div class="column-image">
+                    <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/665bbc2d57ce0f12b07bb412_interview_14781521.png" alt="Client-Side Project Management">
+                </div>
+                <div class="column-content">
+                    <h2>Client-Side Project Management</h2>
+                    <p>We provide comprehensive oversight and representation throughout the project lifecycle. Our services include initial planning, permit applications, construction oversight, and final completion.</p>
+
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <span class="feature-heading">Planning and Feasibility</span>
+                            Working with you to determine project viability and developing initial cost plans and forecasts based on your budget.
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-heading">Consultant Engagement</span>
+                            Assisting on the initial design concept, selecting top-tier designers suited to the project, and ensuring all documentation is construction-ready.
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-heading">Permits and Approvals</span>
+                            Liaising with local authorities and surveyors to obtain necessary approvals and permits for construction.
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-heading">Site and Process Management</span>
+                            Providing informed oversight of the builder to ensure adherence to plans, timelines, and quality standards.
+                        </li>
                     </ul>
-                    <a href="https://buy.stripe.com/fZecPM1yxayr6IM8wB" class="btn btn-full">Buy Now</a>
-                </div>
-                
-                <div class="package-card">
-                    <h3 class="package-name">New Dwelling</h3>
-                    <div class="package-price">$14,500</div>
-                    <p class="package-description">Comprehensive solution for new single dwellings and dual occupancy developments.</p>
-                    
-                    <div class="package-timeline">
-                        <p>Typical Timeline: 10-12 weeks</p>
-                    </div>
-                    
-                    <ul class="package-features">
-                        <li>Complete town planning documentation</li>
-                        <li>Full building permit management</li>
-                        <li>Engineering coordination and certification</li>
-                        <li>Energy report procurement</li>
-                        <li>Council negotiations and approval facilitation</li>
-                        <li>Stakeholder management</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/7sI2b81yx9un9UY14a" class="btn btn-full">Buy Now</a>
-                </div>
-                
-                <div class="package-card">
-                    <h3 class="package-name">Complex/Industrial</h3>
-                    <div class="package-price">$22,400</div>
-                    <p class="package-description">Specialized for commercial, industrial, and complex development projects.</p>
-                    
-                    <div class="package-timeline">
-                        <p>Typical Timeline: 16-20 weeks</p>
-                    </div>
-                    
-                    <ul class="package-features">
-                        <li>Comprehensive planning permit coordination</li>
-                        <li>Building permit management</li>
-                        <li>Commercial code compliance oversight</li>
-                        <li>Multi-stakeholder coordination</li>
-                        <li>Technical report management</li>
-                        <li>Advanced council negotiations</li>
-                        <li>Industrial compliance facilitation</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/14kaHEcdb8qjaZ25kr" class="btn btn-full">Buy Now</a>
+
+                    <a href="contact.html" class="btn">Get In Touch</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Process Section -->
-        <section class="section">
-            <h2>Our Streamlined Process</h2>
-            <p class="text-center">We've simplified the typically complex permit journey into a clear, transparent three-step process.</p>
-            
-            <div class="process">
-                <div class="steps">
-                    <div class="step">
-                        <h4>Assessment &amp; Strategy</h4>
-                        <p>We analyze your project details, identify potential challenges, and create a tailored permit strategy. This initial review ensures we address all requirements from the start.</p>
-                    </div>
-                    <div class="step">
-                        <h4>Documentation &amp; Submission</h4>
-                        <p>Our team prepares all required documentation and coordinates with necessary consultants. We then submit comprehensive applications that anticipate council queries to prevent delays.</p>
-                    </div>
-                    <div class="step">
-                        <h4>Negotiation &amp; Approval</h4>
-                        <p>We actively manage the approval process, responding to information requests, negotiating with authorities, and ensuring all conditions are met for final permit issuance.</p>
-                    </div>
+    <section class="section">
+        <div class="container">
+            <div class="two-column reversed">
+                <div class="column-content">
+                    <h2>Domestic, Commercial & Civil Construction</h2>
+                    <p>At Build Co, we manage a range of residential, commercial and local government construction projects, including government contracts, local council works, and various domestic and commercial developments.</p>
+
+                    <p>Through our joint ventures with experienced <strong class="text-highlight">Commercial (CBU)</strong> and <strong class="text-highlight">Domestic (DBU) Builders</strong>, we leverage extensive industry knowledge to handle complex infrastructure and commercial projects effectively.</p>
+
+                    <ul class="feature-list">
+                        <li class="feature-item">Parks & Public Spaces</li>
+                        <li class="feature-item">Sports Pavilions & Ovals</li>
+                        <li class="feature-item">Commercial New Builds</li>
+                        <li class="feature-item">Commercial Office & Retail Fit-Outs</li>
+                        <li class="feature-item">High-End Home Renovations</li>
+                        <li class="feature-item">Residential New Build Construction</li>
+                    </ul>
+
+                    <a href="construction.html" class="btn">View Construction Services</a>
+                </div>
+                <div class="column-image">
+                    <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/665bbc2ccb5e510c3aa74621_sketch_2827391.png" alt="Construction Services">
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section">
+    <section class="cta-section">
+        <div class="container">
             <div class="cta-content">
-                <h2 class="cta-heading">Ready to Start Your Project?</h2>
-                <p class="cta-text">Stop worrying about permit complications and delays. Our fixed fee packages give you cost certainty and expert handling from day one.</p>
-                <a href="#get-started" class="btn btn-large">Get Started Now</a>
+                <h2 class="cta-heading">Fixed Fee Permit Approvals</h2>
+                <p class="cta-text">Simplify your construction project with our transparent Fixed Fee Packages. We handle all the complexities of permit approvals so you can focus on building.</p>
+                <a href="fixed-fee-permit-packages.html" class="btn btn-large">Explore Fixed Fee Packages</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Form Section -->
-        <section class="section" id="get-started">
-            <div class="form-section">
-                <div class="form-header">
-                    <div class="form-tagline">Get Started</div>
-                    <h2>Complete Your Purchase</h2>
-                    <p class="text-center">Select your options below to finalize your permit package purchase or request a custom quote.</p>
-                </div>
-                
-                <form id="permitPurchaseForm">
-                    <!-- Client Details -->
-                    <h3>Your Details</h3>
-                    <div class="form-columns">
-                        <div class="form-row">
-                            <label for="fullname">Full Name*</label>
-                            <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
-                        </div>
-                        
-                        <div class="form-row">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company" placeholder="If applicable">
-                        </div>
-                    </div>
-                    
-                    <div class="form-columns">
-                        <div class="form-row">
-                            <label for="phone">Phone Number*</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Your best contact number" required>
-                        </div>
-                        
-                        <div class="form-row">
-                            <label for="email">Email Address*</label>
-                            <input type="email" id="email" name="email" placeholder="Your email address" required>
-                        </div>
-                    </div>
-
-                    <!-- Project Details -->
-                    <h3>Project Information</h3>
-                    <div class="form-row">
-                        <label for="address">Project Address*</label>
-                        <input type="text" id="address" name="address" placeholder="Full project address" required>
-                    </div>
-                    
-                    <div class="form-row">
-                        <label for="council">Local Council/Municipality</label>
-                        <input type="text" id="council" name="council" placeholder="Council or municipality name">
-                    </div>
-
-                    <div class="form-columns">
-                        <div class="form-row">
-                            <label for="projectType">Project Type*</label>
-                            <select id="projectType" name="projectType" onchange="calculateTotal()" required>
-                                <option value="">-- Select Your Project Type --</option>
-                                <option value="7500">Residential Extension/Renovation ($7,500)</option>
-                                <option value="14500">New Dwelling/Dual Occupancy ($14,500)</option>
-                                <option value="22400">Complex/Industrial Project ($22,400)</option>
-                                <option value="custom">I need a custom quote</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-row">
-                            <label for="targetDate">Target Start Date</label>
-                            <input type="date" id="targetDate" name="targetDate">
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <label for="description">Project Description</label>
-                        <textarea id="description" name="description" rows="3" placeholder="Brief overview of your project"></textarea>
-                    </div>
-
-                    <!-- Options and Add-ons -->
-                    <h3>Additional Services</h3>
-                    <div class="form-columns">
-                        <div class="form-row">
-                            <label for="priority">Processing Speed</label>
-                            <select id="priority" name="priority" onchange="calculateTotal()">
-                                <option value="0">Standard Processing</option>
-                                <option value="2050">Priority Processing (+$2,050)</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-row">
-                            <label for="expired">Permit Status</label>
-                            <select id="expired" name="expired" onchange="calculateTotal()">
-                                <option value="0">New Application</option>
-                                <option value="750">Expired/Lapsed Permit Renewal (+$750)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Interstate Site Visit Option -->
-                    <div class="form-row">
-                        <label for="interstateVisit">Interstate Site Visits</label>
-                        <div class="checkbox-label" style="margin-bottom: 15px;">
-                            <input type="checkbox" id="interstateVisit" name="interstateVisit" onchange="toggleSiteVisitQuantity()">
-                            Interstate Site Visit Add-on ($1,500 per visit, includes overnight stays when needed)
-                        </div>
-                        
-                        <div id="siteVisitQuantity" class="quantity-input" style="display: none;">
-                            <label style="margin-right: 15px; margin-bottom: 0;">Number of site visits:</label>
-                            <button type="button" onclick="decrementVisits()">-</button>
-                            <input type="number" id="visitCount" name="visitCount" value="1" min="1" max="10" readonly onchange="calculateTotal()">
-                            <button type="button" onclick="incrementVisits()">+</button>
-                        </div>
-                    </div>
-
-                    <!-- Complexity Factors -->
-                    <h3>Site Complexity Factors</h3>
-                    <p>Select any factors that apply to your project site:</p>
-                    
-                    <div class="checkbox-container">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="bushfire" name="complexity" value="bushfire" onchange="calculateTotal()">
-                            Bushfire Prone Area (+$500)
-                        </label>
-                        
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="heritage" name="complexity" value="heritage" onchange="calculateTotal()">
-                            Heritage Overlay (+$500)
-                        </label>
-                        
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="flood" name="complexity" value="flood" onchange="calculateTotal()">
-                            Flood Overlay (+$500)
-                        </label>
-                        
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="easement" name="complexity" value="easement" onchange="calculateTotal()">
-                            Significant Easements (+$500)
-                        </label>
-                    </div>
-
-                    <!-- Services Required -->
-                    <h3>Services Required</h3>
-                    <p>Select all services you need for your project:</p>
-                    
-                    <div class="checkbox-container">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="planning" name="services" value="planning">
-                            Town Planning Permit
-                        </label>
-                        
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="building" name="services" value="building">
-                            Building Permit
-                        </label>
-                        
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="retrospective" name="services" value="retrospective">
-                            Retrospective Approval
-                        </label>
-                        
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="council" name="services" value="council">
-                            Council Negotiation
-                        </label>
-                        
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="soil" name="services" value="soil" onchange="calculateTotal()">
-                            Soil Testing (+$300)
-                        </label>
-                    </div>
-                    
-                    <!-- Supporting Documents -->
-                    <div class="form-row" style="margin-top: 30px;">
-                        <label for="sitePlans">Upload Site Plans (optional)</label>
-                        <input type="file" id="sitePlans" name="sitePlans" accept=".pdf,.jpg,.png,.dwg">
-                    </div>
-
-                    <!-- Fee Summary -->
-                    <div class="fee-summary">
-                        <h3>Order Summary</h3>
-                        <div class="fee-row">
-                            <span>Base Package Fee:</span>
-                            <span id="baseFeeSummary">$0.00</span>
-                        </div>
-                        <div class="fee-row">
-                            <span>Priority Processing:</span>
-                            <span id="priorityFeeSummary">$0.00</span>
-                        </div>
-                        <div class="fee-row">
-                            <span>Permit Status Fee:</span>
-                            <span id="statusFeeSummary">$0.00</span>
-                        </div>
-                        <div class="fee-row">
-                            <span>Interstate Site Visits:</span>
-                            <span id="siteVisitFeeSummary">$0.00</span>
-                        </div>
-                        <div class="fee-row">
-                            <span>Complexity Factors:</span>
-                            <span id="complexityFeeSummary">$0.00</span>
-                        </div>
-                        <div class="fee-row">
-                            <span>Additional Services:</span>
-                            <span id="servicesFeeSummary">$0.00</span>
-                        </div>
-                        <div class="fee-total">
-                            <span>Total to Pay:</span>
-                            <span id="totalDisplay">$0.00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row" style="margin-top: 30px;">
-                        <label class="checkbox-label" style="padding: 15px; background: rgba(255, 107, 0, 0.08); border: 1px solid rgba(255, 107, 0, 0.2);">
-                            <input type="checkbox" id="consent" name="consent" required>
-                            I understand that by proceeding with this purchase, I agree to provide accurate project information. Any cancellations or intentionally provided incorrect information will incur a 12.5% non-refundable fee of the total package price.
-                        </label>
-                    </div>
-
-                    <button type="submit" class="btn btn-full btn-large" style="margin-top: 30px;">Proceed to Checkout</button>
-                    <p style="margin-top: 15px; text-align: center; font-size: 0.9rem; color: var(--muted-text);">
-                        Our team will be in touch within 2-3 business days with a preliminary action plan and any additional information required.
-                    </p>
-                </form>
+    <section class="section service-area">
+        <div class="container">
+            <div class="service-area-content">
+                <h2>Our Service Area</h2>
+                <p>We serve clients Australia-wide, with a strong network established in Melbourne.</p>
+                <p>If your project is outside this area, please contact us to discuss how we can best serve your needs.</p>
+                <a href="mailto:enquiries@buildcoprojects.com.au" class="contact-link">enquiries@buildcoprojects.com.au</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </div>
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
 
-    <script>
-        // Toggle site visit quantity input
-        function toggleSiteVisitQuantity() {
-            const checkbox = document.getElementById('interstateVisit');
-            const quantityDiv = document.getElementById('siteVisitQuantity');
-            const visitCount = document.getElementById('visitCount');
-            
-            if (checkbox.checked) {
-                quantityDiv.style.display = 'flex';
-                visitCount.value = 1;
-            } else {
-                quantityDiv.style.display = 'none';
-                visitCount.value = 0;
-            }
-            calculateTotal();
-        }
-        
-        // Increment and decrement site visits
-        function incrementVisits() {
-            const visitCount = document.getElementById('visitCount');
-            if (parseInt(visitCount.value) < 10) {
-                visitCount.value = parseInt(visitCount.value) + 1;
-                calculateTotal();
-            }
-        }
-        
-        function decrementVisits() {
-            const visitCount = document.getElementById('visitCount');
-            if (parseInt(visitCount.value) > 1) {
-                visitCount.value = parseInt(visitCount.value) - 1;
-                calculateTotal();
-            }
-        }
-        
-        // Calculate total cost
-        function calculateTotal() {
-            let baseProjectFee = 0;
-            let priorityFee = 0;
-            let statusFee = 0;
-            let siteVisitFee = 0;
-            let complexityFee = 0;
-            let servicesFee = 0;
-            let total = 0;
-            
-            // Get base package cost
-            const projectType = document.getElementById('projectType').value;
-            if (projectType === "7500") {
-                baseProjectFee = 7500;
-            } else if (projectType === "14500") {
-                baseProjectFee = 14500;
-            } else if (projectType === "22400") {
-                baseProjectFee = 22400;
-            } else {
-                baseProjectFee = 0;
-            }
-            
-            // Priority processing
-            priorityFee = parseInt(document.getElementById('priority').value || 0);
-            
-            // Expired Permit
-            statusFee = parseInt(document.getElementById('expired').value || 0);
-            
-            // Interstate site visits
-            if (document.getElementById('interstateVisit').checked) {
-                const visitCount = parseInt(document.getElementById('visitCount').value || 1);
-                siteVisitFee = 1500 * visitCount;
-            }
-            
-            // Site Complexity
-            if (document.getElementById('bushfire').checked) complexityFee += 500;
-            if (document.getElementById('heritage').checked) complexityFee += 500;
-            if (document.getElementById('flood').checked) complexityFee += 500;
-            if (document.getElementById('easement').checked) complexityFee += 500;
-            
-            // Additional Services
-            if (document.getElementById('soil').checked) servicesFee += 300;
-            
-            // Calculate total
-            total = baseProjectFee + priorityFee + statusFee + siteVisitFee + complexityFee + servicesFee;
-            
-            // Format and update fee summary
-            function formatCurrency(amount) {
-                return ' + amount.toLocaleString() + '.00';
-            }
-            
-            document.getElementById('baseFeeSummary').innerText = formatCurrency(baseProjectFee);
-            document.getElementById('priorityFeeSummary').innerText = formatCurrency(priorityFee);
-            document.getElementById('statusFeeSummary').innerText = formatCurrency(statusFee);
-            document.getElementById('siteVisitFeeSummary').innerText = formatCurrency(siteVisitFee);
-            document.getElementById('complexityFeeSummary').innerText = formatCurrency(complexityFee);
-            document.getElementById('servicesFeeSummary').innerText = formatCurrency(servicesFee);
-            document.getElementById('totalDisplay').innerText = formatCurrency(total);
-        }
-
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            calculateTotal();
-            
-            // Form submission handler
-            document.getElementById('permitPurchaseForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Simple validation
-                const requiredFields = ['fullname', 'phone', 'email', 'address', 'projectType'];
-                let valid = true;
-                
-                requiredFields.forEach(field => {
-                    const input = document.getElementById(field);
-                    if (!input.value.trim()) {
-                        input.style.borderColor = '#FF3A30';
-                        valid = false;
-                    } else {
-                        input.style.borderColor = '';
-                    }
-                });
-                
-                // Check if this is a custom quote request
-                const isCustomQuote = document.getElementById('projectType').value === 'custom';
-                
-                if (valid) {
-                    if (isCustomQuote) {
-                        // Show custom quote success message
-                        alert('Thank you for your custom quote request! Our team will be in touch within 2-3 business days to discuss your specific project needs.');
-                    } else {
-                        // Show checkout success message for standard packages
-                        alert('Thank you for your purchase! You will be redirected to our secure payment gateway to complete your transaction.');
-                        
-                        // Determine which package link to follow based on the selection
-                        const projectType = document.getElementById('projectType').value;
-                        let checkoutUrl = '';
-                        
-                        if (projectType === "7500") {
-                            checkoutUrl = 'https://buy.stripe.com/fZecPM1yxayr6IM8wB';
-                        } else if (projectType === "14500") {
-                            checkoutUrl = 'https://buy.stripe.com/7sI2b81yx9un9UY14a';
-                        } else if (projectType === "22400") {
-                            checkoutUrl = 'https://buy.stripe.com/14kaHEcdb8qjaZ25kr';
-                        }
-                        
-                        // Redirect to payment page
-                        if (checkoutUrl) {
-                            setTimeout(function() {
-                                window.location.href = checkoutUrl;
-                            }, 1500);
-                        }
-                    }
-                } else {
-                    alert('Please fill in all required fields to complete your request.');
-                }
-            });
-            
-            // Add address autocomplete
-            const addressInput = document.getElementById('address');
-            if (addressInput) {
-                // This would connect to an actual address autocomplete API in production
-                addressInput.addEventListener('focus', function() {
-                    console.log('Address autocomplete would activate here in production environment');
-                });
-            }
-            
-            // Add council autocomplete
-            const councilInput = document.getElementById('council');
-            if (councilInput) {
-                // This would connect to an actual council list API in production
-                councilInput.addEventListener('focus', function() {
-                    console.log('Council autocomplete would activate here in production environment');
-                });
-            }
-            
-            // Add smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
+    <!-- Component Loader Script -->
+    <script src="./assets/js/components.js"></script>
 </body>
 </html>
