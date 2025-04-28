@@ -5,6 +5,9 @@
 [functions]
   node_bundler = "esbuild"
 
+[site]
+  domain = "buildcoprojects.netlify.app"
+
 [[redirects]]
   from = "/success"
   to = "/payment-success.html"
