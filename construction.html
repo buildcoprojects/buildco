@@ -1,954 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Build Co | Residential, Commercial & Civil Construction</title>
-<meta content="Build Co Projects - Residential, Commercial & Civil Construction" name="description">
-<meta content="Build Co | Residential, Commercial & Civil Construction" property="og:title">
-<meta content="Build Co Projects - Residential, Commercial & Civil Construction" property="og:description">
-<meta content="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/66e3a4821404fefff52e9dc8_Build.%20Co%20Link%20Preview.png" property="og:image">
-<link rel="shortcut icon" type="image/x-icon" href="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/6696416d617685b3acb02ab7_image_2024-07-16_194620342.png">
-<link rel="apple-touch-icon" href="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/66964180617685b3acb05405_image_2024-07-16_194639214.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-    /* Base Styles */
-    :root {
-        --primary-color: #FF6B00;
-        --primary-hover: #FF8C40;
-        --dark-bg: #121212;
-        --card-bg: #1E1E1E;
-        --light-text: #FFFFFF;
-        --muted-text: #B0B0B0;
-        --border-radius: 12px;
-        --shadow: 0 10px 30px rgba(0,0,0,0.25);
-        --transition: all 0.3s ease;
-    }
-    
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    
-    body { 
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 300;
-        padding: 0; 
-        margin: 0; 
-        background-color: var(--dark-bg);
-        color: var(--light-text);
-        line-height: 1.6;
-    }
-    
-    .container { 
-        max-width: 1200px; 
-        margin: 0 auto; 
-        padding: 0 20px; 
-    }
-    
-    /* Typography */
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: 700;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-        color: var(--light-text);
-    }
-    
-    h1 { 
-        font-size: 3.5rem; 
-        margin-bottom: 1.5rem;
-        background: linear-gradient(90deg, var(--primary-color), #FFB700);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-align: center; 
-    }
-    
-    h2 { 
-        font-size: 2.5rem; 
-        margin-bottom: 2rem;
-        position: relative;
-        text-align: center; 
-    }
-    
-    h2:after {
-        content: '';
-        display: block;
-        width: 80px;
-        height: 4px;
-        background: var(--primary-color);
-        margin: 15px auto 0;
-        border-radius: 2px;
-    }
-    
-    h3 {
-        font-size: 1.75rem;
-        margin: 0 0 1.5rem 0;
-        color: var(--primary-color);
-    }
-    
-    p { 
-        color: var(--muted-text); 
-        line-height: 1.8; 
-        margin-bottom: 1.5rem;
-        font-size: 1.1rem;
-    }
-    
-    .text-center {
-        text-align: center;
-    }
-    
-    .text-highlight {
-        color: var(--primary-color);
-        font-weight: 600;
-    }
-    
-    /* Hero Section */
-    .hero-section {
-        position: relative;
-        padding: 120px 0 80px;
-        overflow: hidden;
-        background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-    }
-    
-    .hero-section:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjRkY2QjAwIiBvcGFjaXR5PSIwLjA1Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
-        opacity: 0.2;
-    }
-    
-    .hero-content {
-        position: relative;
-        z-index: 1;
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-    }
-    
-    .hero-heading {
-        font-size: 3.5rem;
-        margin-bottom: 1.5rem;
-        color: var(--light-text);
-        text-transform: uppercase;
-    }
-    
-    .scroll-indicator {
-        position: absolute;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        animation: bounce 2s infinite;
-        z-index: 10;
-    }
-    
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
-            transform: translateX(-50%) translateY(0);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Co | Residential, Commercial & Civil Construction</title>
+    <meta name="description" content="Build Co Projects - Residential, Commercial & Civil Construction">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.buildcoprojects.com.au/construction.html">
+    <meta property="og:title" content="Build Co | Residential, Commercial & Civil Construction">
+    <meta property="og:description" content="Build Co Projects - Residential, Commercial & Civil Construction">
+    <meta property="og:image" content="./assets/images/build-co-preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.buildcoprojects.com.au/construction.html">
+    <meta property="twitter:title" content="Build Co | Residential, Commercial & Civil Construction">
+    <meta property="twitter:description" content="Build Co Projects - Residential, Commercial & Civil Construction">
+    <meta property="twitter:image" content="./assets/images/build-co-preview.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="./assets/css/components.css">
+
+    <style>
+        /* Construction Page Specific Styles */
+        .hero-section {
+            position: relative;
+            padding: 120px 0 80px;
+            background-color: #141312;
+            overflow: hidden;
         }
-        40% {
-            transform: translateX(-50%) translateY(-20px);
-        }
-        60% {
-            transform: translateX(-50%) translateY(-10px);
-        }
-    }
-    
-    /* Two Column Sections */
-    .section {
-        padding: 100px 0;
-        position: relative;
-    }
-    
-    .two-column {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-        align-items: center;
-    }
-    
-    .column-content {
-        padding: 30px;
-    }
-    
-    .column-heading {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        color: var(--light-text);
-        text-transform: uppercase;
-        text-align: left;
-    }
-    
-    .column-heading:after {
-        content: '';
-        display: block;
-        width: 80px;
-        height: 4px;
-        background: var(--primary-color);
-        margin: 15px 0 0;
-        border-radius: 2px;
-    }
-    
-    .column-heading.light {
-        color: var(--light-text);
-    }
-    
-    .column-heading.dark {
-        color: var(--light-text);
-    }
-    
-    .column-text {
-        color: var(--muted-text);
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
-        font-size: 1.1rem;
-    }
-    
-    .column-image-container {
-        width: 100%;
-        height: 500px;
-        border-radius: var(--border-radius);
-        overflow: hidden;
-        box-shadow: var(--shadow);
-    }
-    
-    .column-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .bg-image {
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        border-radius: var(--border-radius);
-    }
-    
-    .dark-section {
-        background-color: #0a0a0a;
-    }
-    
-    .feature-list {
-        list-style: none;
-        margin: 30px 0;
-    }
-    
-    .feature-item {
-        padding: 15px 0 15px 40px;
-        position: relative;
-        font-size: 1.1rem;
-        color: var(--muted-text);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        text-transform: uppercase;
-    }
-    
-    .feature-item:last-child {
-        border-bottom: none;
-    }
-    
-    .feature-item:before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--primary-color);
-        font-weight: bold;
-        font-size: 1.2rem;
-    }
-    
-    .black-text {
-        color: #eee !important;
-    }
-    
-    /* Process Section */
-    .process-section {
-        padding: 100px 0;
-        background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-    }
-    
-    .process-heading {
-        text-align: center;
-        margin-bottom: 60px;
-    }
-    
-    .process-heading h2 {
-        color: var(--light-text);
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .process-steps {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 80px;
-    }
-    
-    .process-steps:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 4px;
-        height: 100%;
-        background: rgba(255, 107, 0, 0.2);
-        border-radius: 2px;
-    }
-    
-    .process-step {
-        display: grid;
-        grid-template-columns: 1fr 100px 1fr;
-        gap: 30px;
-        position: relative;
-        align-items: center;
-    }
-    
-    .step-content {
-        background: linear-gradient(145deg, #232323, #1a1a1a);
-        border-radius: var(--border-radius);
-        padding: 40px;
-        box-shadow: var(--shadow);
-        border: 1px solid rgba(255, 107, 0, 0.1);
-        transition: var(--transition);
-    }
-    
-    .step-content:hover {
-        transform: translateY(-10px);
-        border-color: rgba(255, 107, 0, 0.3);
-    }
-    
-    .step-number {
-        width: 80px;
-        height: 80px;
-        background: var(--primary-color);
-        color: #000;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        font-weight: bold;
-        position: relative;
-        z-index: 2;
-        margin: 0 auto;
-        box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
-    }
-    
-    .step-image {
-        max-width: 100%;
-        border-radius: var(--border-radius);
-        overflow: hidden;
-    }
-    
-    .step-image img {
-        width: 100%;
-        height: auto;
-    }
-    
-    .step-title {
-        font-size: 1.8rem;
-        margin-bottom: 15px;
-        color: var(--primary-color);
-    }
-    
-    .step-description {
-        color: var(--muted-text);
-    }
-    
-    .feature-heading {
-        color: var(--primary-color);
-        font-weight: 600;
-        display: block;
-        margin-bottom: 5px;
-    }
-    
-    /* Buttons */
-    .btn { 
-        display: inline-block; 
-        background-color: var(--primary-color); 
-        color: #000; 
-        text-align: center; 
-        padding: 18px 36px; 
-        border: none; 
-        border-radius: 50px; 
-        font-weight: 600; 
-        font-size: 1rem;
-        text-transform: uppercase; 
-        letter-spacing: 1px; 
-        cursor: pointer;
-        transition: var(--transition);
-        text-decoration: none;
-    }
-    
-    .btn:hover {
-        background-color: var(--primary-hover);
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
-    }
-    
-    .btn-large {
-        padding: 20px 40px;
-        font-size: 1.1rem;
-    }
-    
-    .btn-center {
-        display: block;
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .btn-outline {
-        background-color: transparent;
-        border: 2px solid var(--primary-color);
-        color: var(--primary-color);
-    }
-    
-    .btn-outline:hover {
-        background-color: var(--primary-color);
-        color: #000;
-    }
-    
-    /* Footer */
-    .footer {
-        background-color: #0a0a0a;
-        padding: 80px 0 30px;
-        position: relative;
-    }
-    
-    .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
-        margin-bottom: 50px;
-    }
-    
-    .footer-column h4 {
-        color: var(--primary-color);
-        margin-bottom: 25px;
-        font-size: 1.2rem;
-    }
-    
-    .footer-logo {
-        max-width: 200px;
-        margin-bottom: 15px;
-    }
-    
-    .footer-info {
-        color: var(--muted-text);
-        margin-bottom: 5px;
-        font-size: 0.9rem;
-    }
-    
-    .footer-links {
-        list-style: none;
-    }
-    
-    .footer-link {
-        display: block;
-        color: var(--muted-text);
-        text-decoration: none;
-        margin-bottom: 15px;
-        transition: var(--transition);
-        font-size: 0.95rem;
-    }
-    
-    .footer-link:hover {
-        color: var(--primary-color);
-    }
-    
-    .contact-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-    
-    .contact-icon {
-        width: 24px;
-        margin-right: 15px;
-    }
-    
-    .contact-text {
-        color: var(--muted-text);
-    }
-    
-    .contact-text a {
-        color: var(--muted-text);
-        text-decoration: none;
-        transition: var(--transition);
-    }
-    
-    .contact-text a:hover {
-        color: var(--primary-color);
-    }
-    
-    .legal-block {
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-        padding-top: 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    
-    .legal-text {
-        color: #555;
-        font-size: 0.85rem;
-        margin-bottom: 15px;
-    }
-    
-    .social-links {
-        display: flex;
-        gap: 15px;
-    }
-    
-    .social-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 50%;
-        transition: var(--transition);
-    }
-    
-    .social-link:hover {
-        background: var(--primary-color);
-        transform: translateY(-3px);
-    }
-    
-    .social-icon {
-        width: 20px;
-        height: 20px;
-        filter: brightness(0) invert(1);
-    }
-    
-    .back-to-top {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background-color: var(--primary-color);
-        color: #000;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-        opacity: 0;
-        transform: translateY(20px);
-        transition: var(--transition);
-        z-index: 100;
-    }
-    
-    .back-to-top.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .back-to-top:hover {
-        background-color: var(--primary-hover);
-        transform: translateY(-5px);
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 1024px) {
-        h1, .hero-heading {
-            font-size: 3rem;
-        }
-        
-        h2, .column-heading {
-            font-size: 2.2rem;
-        }
-        
-        .process-step {
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-        
-        .process-steps:before {
-            left: 40px;
-        }
-        
-        .step-number {
-            margin: 0;
-            margin-left: 40px;
-        }
-        
-        .step-image {
-            order: -1;
-        }
-    }
-    
-    @media (max-width: 768px) {
-        h1, .hero-heading {
-            font-size: 2.5rem;
-        }
-        
-        h2, .column-heading {
-            font-size: 1.8rem;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-        }
-        
-        .section {
-            padding: 70px 0;
-        }
-        
-        .two-column {
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-        
-        .column-image-container {
-            height: 350px;
-        }
-        
-        .process-section {
-            padding: 70px 0;
-        }
-        
-        .process-steps:before {
-            left: 20px;
-        }
-        
-        .step-number {
-            width: 60px;
-            height: 60px;
-            font-size: 1.5rem;
-            margin-left: 20px;
-        }
-        
-        .legal-block {
-            flex-direction: column;
-            gap: 20px;
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
-        
-        .social-links {
-            justify-content: center;
+
+        .hero-heading {
+            font-size: 48px;
+            color: #FF6B00;
+            margin-bottom: 30px;
+            text-transform: uppercase;
         }
-    }
-    
-    @media (max-width: 480px) {
-        h1, .hero-heading {
-            font-size: 2rem;
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 10;
         }
-        
-        .btn-large {
-            padding: 15px 30px;
-            font-size: 1rem;
-        }
-        
-        .column-image-container {
-            height: 250px;
-        }
-    }
-</style>
-</head>
 
-<body>
-<!-- Hero Section -->
-<section class="hero-section" id="top">
-    <div class="container">
-        <div class="hero-content">
-            <h1 class="hero-heading">Construction</h1>
-        </div>
-    </div>
-    <a href="#main-content" class="scroll-indicator">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="#FF6B00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </a>
-</section>
-
-<!-- Main Content Section -->
-<section id="main-content" class="section">
-    <div class="container">
-        <div class="two-column">
-            <div class="column-content">
-                <h2 class="column-heading">Domestic, Commercial & Civil Construction</h2>
-                <p class="column-text">Build Co manages a range of public, residential and commercial construction projects, including government contracts, local council works, and various domestic and commercial developments. From planning and design to completion, we ensure that every aspect of the project runs smoothly, adhering to high standards of quality.</p>
-                
-                <p class="column-text">Through our joint ventures with experienced <span class="text-highlight">Commercial (CBU)</span> and <span class="text-highlight">Domestic (DBU) Builders</span>, we leverage extensive industry knowledge to handle complex infrastructure and commercial projects effectively.</p>
-                
-                <ul class="feature-list">
-                    <li class="feature-item">New Home Construction</li>
-                    <li class="feature-item">Home Renovations</li>
-                    <li class="feature-item">Additions & Alterations</li>
-                    <li class="feature-item">Mixed-Use Commercial Construction</li>
-                    <li class="feature-item">Industrial & Warehouse Facilities</li>
-                    <li class="feature-item">Community & Recreational Facilities</li>
-                    <li class="feature-item">Public Infrastructure & Civil Works</li>
-                </ul>
-                
-                <a href="/contact" class="btn">Get in Touch</a>
-            </div>
-            <div class="column-image-container">
-                <div class="bg-image" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29uc3RydWN0aW9uJTIwc2l0ZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60');"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Fitouts Section -->
-<section class="section dark-section">
-    <div class="container">
-        <div class="two-column">
-            <div class="column-image-container">
-                <div class="bg-image" style="background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b2ZmaWNlJTIwZml0b3V0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60');"></div>
-            </div>
-            <div class="column-content">
-                <h2 class="column-heading light">Office, Hospitality & Retail Fitouts & Defits</h2>
-                <p class="column-text">Our expert team and partner builders specialize in transforming commercial spaces to elevate both aesthetics and functionality. From concept to completion, we meticulously manage every aspect of a defit and fitouts.</p>
-                
-                <p class="column-text">With extensive expertise in high-end office, luxury retail, and bespoke hospitality projects, we tailor our services to align perfectly with your brand's unique vision and operational requirements.</p>
-                
-                <ul class="feature-list">
-                    <li class="feature-item black-text">Corporate Offices</li>
-                    <li class="feature-item black-text">Public Sector Offices & Facilities</li>
-                    <li class="feature-item black-text">Retail Stores</li>
-                    <li class="feature-item black-text">Hospitality Venues</li>
-                    <li class="feature-item black-text">Lobbies & Receptions</li>
-                    <li class="feature-item black-text">Lift Lobbies</li>
-                </ul>
-                
-                <a href="/contact" class="btn">Get in Touch</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Process Section -->
-<section class="process-section">
-    <div class="container">
-        <div class="process-heading">
-            <h2>Expert Guidance Through Every Stage of Your Project</h2>
-        </div>
-        
-        <div class="process-steps">
-            <div class="process-step">
-                <div class="step-content">
-                    <h3 class="step-title">Project Initiation</h3>
-                    <p class="step-description">
-                        <span class="feature-heading">Client Representation</span>
-                        Acting as the client's representative in all critical project decisions.
-                    </p>
-                    <p class="step-description">
-                        <span class="feature-heading">Stakeholder Due Diligence</span>
-                        Ensuring that the architect, engineers and all other stakeholders have current and active licenses, and are chosen based on their relevant project experience.
-                    </p>
-                    <p class="step-description">
-                        <span class="feature-heading">Implementing Budget & Cost Controls</span>
-                        Establishing a realistic project budget and setting cost control measures to prevent overruns.
-                    </p>
-                    <p class="step-description">
-                        <span class="feature-heading">Value Engineering Advice</span>
-                        Cost-effective solutions without compromising quality.
-                    </p>
-                </div>
-                <div class="step-number">1</div>
-                <div class="step-image">
-                    <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/665af72d70c97b1b86223ef3_undraw_scrum_board_re_wk7v.svg" alt="Project Initiation">
-                </div>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-image">
-                    <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/665af7ddd540e38880c01b6c_undraw_product_iteration_kjok.svg" alt="Pre-construction">
-                </div>
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h3 class="step-title">Pre-construction</h3>
-                    <p class="step-description">
-                        <span class="feature-heading">Consultant Engagement</span>
-                        Assisting in selecting and contracting the right architect, and other top-tier consultants.
-                    </p>
-                    <p class="step-description">
-                        <span class="feature-heading">Design Management</span>
-                        Aligning design development with client expectations.
-                    </p>
-                    <p class="step-description">
-                        <span class="feature-heading">Approvals Management</span>
-                        Working with local authorities and surveyors to obtain all the necessary permits and approvals.
-                    </p>
-                    <p class="step-description">
-                        <span class="feature-heading">Design Documentation Review</span>
-                        Providing oversight to ensure design documentation is of top quality and aligns with client expectations.
-                    </p>
-                    <p class="step-description">
-                        <span class="feature-heading">Programme Management</span>
-                        Establishing a schedule with key milestones for timely delivery.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-content">
-                    <h3 class="step-title">Construction</h3>
-                    <p class="step-description">
-                        <span class="feature-heading">Contract Administration</span>
-                        Managing the head contract and performing contractual assessments.
-                    </p>
-                    <p class="step-description">
-                        <span class="feature-heading">Commercial Matters</span>
-                        Addressing and resolving any commercial issues that arise during the project.
-                    </p>
-                    <p class="step-description">
-                        <span class="feature-heading">Quality Assurance</span>
-                        Ensuring high construction standards.
-                    </p>
-                    <p class="step-description">
-                        <span class="feature-heading">Client Reporting</span>
-                        Regular updates to keep clients informed.
-                    </p>
-                    <p class="step-description">
-                        <span class="feature-heading">Client Coordination</span>
-                        Facilitating seamless client-builder communication.
-                    </p>
-                </div>
-                <div class="step-number">3</div>
-                <div class="step-image">
-                    <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/665af68183d8feaf5c123f90_undraw_under_construction_-46-pa.svg" alt="Construction">
-                </div>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-image">
-                    <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/66eba279b9565bc62a8793d1_undraw_percentages_re_a1ao.svg" alt="Handover">
-                </div>
-                <div class="step-number">4</div>
-                <div class="step-content">
-                    <h3 class="step-title">Handover</h3>
-                    <p class="step-description">
-                        <span class="feature-heading">Final Inspection and Quality Assurance</span>
-                        Conducting thorough inspections to confirm all specifications and quality standards are met.
-                    </p>
-                    <p class="step-description">
-                        <span class="feature-heading">Post-Project Review</span>
-                        Evaluating project outcomes against initial objectives to offer valuable insights for future projects.
-                    </p>
-                    <p class="step-description">
-                        <span class="feature-heading">Financial Reconciliation</span>
-                        Providing a detailed accounting of all project expenditures, settling outstanding financial matters and finalising payments.
-                    </p>
-                    <p class="step-description">
-                        <span class="feature-heading">Defects Liability Management</span>
-                        Managing the rectification of any defects identified during the liability period.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-column">
-                <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/66a824eb84ef4a876979e5c6_BuildCo%20Logo_Clear-White_CroppedV2.png" alt="Build Co Projects" class="footer-logo">
-                <p class="footer-info">BUILD CO PROJECTS PTY LTD</p>
-                <p class="footer-info">ACN: 677 960 735</p>
-                <p class="footer-info">ABN: 44 677 960 735</p>
-            </div>
-            
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="/" class="footer-link">HOME</a></li>
-                    <li><a href="/about" class="footer-link">ABOUT</a></li>
-                    <li><a href="/construction" class="footer-link">CONSTRUCTION</a></li>
-                    <li><a href="/project-management" class="footer-link">PROJECT MANAGEMENT</a></li>
-                    <li><a href="/fixed-fee-permit-approval-packages" class="footer-link">FIXED FEE PERMITS</a></li>
-                    <li><a href="/contact" class="footer-link">CONTACT</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>Contact Us</h4>
-                <div class="contact-item">
-                    <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/670c5d9478df10316f9f2e78_2.png" alt="Email" class="contact-icon">
-                    <div class="contact-text">
-                        <a href="mailto:enquiries@buildcoprojects.com.au">enquiries@buildcoprojects.com.au</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/670c5d936b16bdfbeb711eeb_1.png" alt="Phone" class="contact-icon">
-                    <div class="contact-text">
-                        <a href="tel:+61499144033">0499 144 033</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="legal-block">
-            <div class="legal-text">© 2024 Build Co Projects Pty Ltd. All Rights Reserved.</div>
-            <div class="social-links">
-                <a href="https://www.instagram.com/build.co_projects/" target="_blank" class="social-link">
-                    <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/665310cc7940eb6122f35b56_instagram.svg" alt="Instagram" class="social-icon">
-                </a>
-                <a href="https://www.facebook.com/subconnectgroup" target="_blank" class="social-link">
-                    <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/665310cc7940eb6122f35b51_facebook.svg" alt="Facebook" class="social-icon">
-                </a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- Back to Top Button -->
-<a href="#top" class="back-to-top" id="backToTop">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-</a>
-
-<script>
-    // Back to top button functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const backToTopButton = document.getElementById('backToTop');
-        
-        // Show/hide button based on scroll position
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
             }
-        });
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 20,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    });
-</script>
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .column-content {
+            padding: 30px;
+        }
+
+        .column-heading {
+            font-size: 36px;
+            margin-bottom: 25px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            text-align: left;
+            position: relative;
+        }
+
+        .column-heading:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #FF6B00;
+            margin: 15px 0 0;
+            border-radius: 2px;
+        }
+
+        .column-text {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .text-highlight {
+            color: #FF6B00;
+            font-weight: 600;
+        }
+
+        .dark-section {
+            background-color: #0f0f0f;
+        }
+
+        .column-image-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .bg-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .column-image-container:hover .bg-image {
+            transform: scale(1.05);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            padding: 15px 0 15px 40px;
+            position: relative;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            text-transform: uppercase;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #FF6B00;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .black-text {
+            color: #eee !important;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 100px 0;
+            background: #141312;
+        }
+
+        .process-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .process-heading h2 {
+            color: #FFFFFF;
+            font-size: 36px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .process-heading h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #FF6B00;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .process-steps {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: rgba(255, 107, 0, 0.2);
+            border-radius: 2px;
+        }
+
+        .process-step {
+            display: grid;
+            grid-template-columns: 1fr 100px 1fr;
+            gap: 30px;
+            position: relative;
+            align-items: center;
+        }
+
+        .step-content {
+            background: linear-gradient(145deg, #232323, #1a1a1a);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 107, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .step-content:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 107, 0, 0.3);
+        }
+
+        .step-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #FF6B00;
+        }
+
+        .step-description {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: #FF6B00;
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+        }
+
+        .feature-heading {
+            color: #FF6B00;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #FF6B00;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #e05a00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+        }
+
+        /* Media queries */
+        @media screen and (max-width: 991px) {
+            .hero-heading {
+                font-size: 36px;
+            }
+
+            .column-heading {
+                font-size: 30px;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .process-steps:before {
+                left: 40px;
+            }
+
+            .step-number {
+                margin: 0;
+                margin-left: 40px;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .column-image-container {
+                height: 350px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .hero-heading {
+                font-size: 30px;
+            }
+
+            .column-heading {
+                font-size: 26px;
+            }
+
+            .process-steps:before {
+                left: 20px;
+            }
+
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 22px;
+                margin-left: 20px;
+            }
+
+            .column-image-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="top">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-heading">Construction</h1>
+            </div>
+        </div>
+        <a href="#main-content" class="scroll-indicator">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 10L12 15L17 10" stroke="#FF6B00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Main Content Section -->
+    <section id="main-content" class="section">
+        <div class="container">
+            <div class="two-column">
+                <div class="column-content">
+                    <h2 class="column-heading">Domestic, Commercial & Civil Construction</h2>
+                    <p class="column-text">Build Co manages a range of public, residential and commercial construction projects, including government contracts, local council works, and various domestic and commercial developments. From planning and design to completion, we ensure that every aspect of the project runs smoothly, adhering to high standards of quality.</p>
+
+                    <p class="column-text">Through our joint ventures with experienced <span class="text-highlight">Commercial (CBU)</span> and <span class="text-highlight">Domestic (DBU) Builders</span>, we leverage extensive industry knowledge to handle complex infrastructure and commercial projects effectively.</p>
+
+                    <ul class="feature-list">
+                        <li class="feature-item">New Home Construction</li>
+                        <li class="feature-item">Home Renovations</li>
+                        <li class="feature-item">Additions & Alterations</li>
+                        <li class="feature-item">Mixed-Use Commercial Construction</li>
+                        <li class="feature-item">Industrial & Warehouse Facilities</li>
+                        <li class="feature-item">Community & Recreational Facilities</li>
+                        <li class="feature-item">Public Infrastructure & Civil Works</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn">Get in Touch</a>
+                </div>
+                <div class="column-image-container">
+                    <div class="bg-image" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29uc3RydWN0aW9uJTIwc2l0ZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60');"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fitouts Section -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="two-column">
+                <div class="column-image-container">
+                    <div class="bg-image" style="background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b2ZmaWNlJTIwZml0b3V0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60');"></div>
+                </div>
+                <div class="column-content">
+                    <h2 class="column-heading">Office, Hospitality & Retail Fitouts & Defits</h2>
+                    <p class="column-text">Our expert team and partner builders specialize in transforming commercial spaces to elevate both aesthetics and functionality. From concept to completion, we meticulously manage every aspect of a defit and fitouts.</p>
+
+                    <p class="column-text">With extensive expertise in high-end office, luxury retail, and bespoke hospitality projects, we tailor our services to align perfectly with your brand's unique vision and operational requirements.</p>
+
+                    <ul class="feature-list">
+                        <li class="feature-item black-text">Corporate Offices</li>
+                        <li class="feature-item black-text">Public Sector Offices & Facilities</li>
+                        <li class="feature-item black-text">Retail Stores</li>
+                        <li class="feature-item black-text">Hospitality Venues</li>
+                        <li class="feature-item black-text">Lobbies & Receptions</li>
+                        <li class="feature-item black-text">Lift Lobbies</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="process-heading">
+                <h2>Expert Guidance Through Every Stage of Your Project</h2>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-content">
+                        <h3 class="step-title">Project Initiation</h3>
+                        <p class="step-description">
+                            <span class="feature-heading">Client Representation</span>
+                            Acting as the client's representative in all critical project decisions.
+                        </p>
+                        <p class="step-description">
+                            <span class="feature-heading">Stakeholder Due Diligence</span>
+                            Ensuring that the architect, engineers and all other stakeholders have current and active licenses, and are chosen based on their relevant project experience.
+                        </p>
+                        <p class="step-description">
+                            <span class="feature-heading">Implementing Budget & Cost Controls</span>
+                            Establishing a realistic project budget and setting cost control measures to prevent overruns.
+                        </p>
+                        <p class="step-description">
+                            <span class="feature-heading">Value Engineering Advice</span>
+                            Cost-effective solutions without compromising quality.
+                        </p>
+                    </div>
+                    <div class="step-number">1</div>
+                    <div class="step-image">
+                        <img src="https://ext.same-assets.com/549134004/3841063720.svg" alt="Project Initiation" style="width: 100%;">
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="https://ext.same-assets.com/549134004/2260835591.svg" alt="Pre-construction" style="width: 100%;">
+                    </div>
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Pre-construction</h3>
+                        <p class="step-description">
+                            <span class="feature-heading">Consultant Engagement</span>
+                            Assisting in selecting and contracting the right architect, and other top-tier consultants.
+                        </p>
+                        <p class="step-description">
+                            <span class="feature-heading">Design Management</span>
+                            Aligning design development with client expectations.
+                        </p>
+                        <p class="step-description">
+                            <span class="feature-heading">Approvals Management</span>
+                            Working with local authorities and surveyors to obtain all the necessary permits and approvals.
+                        </p>
+                        <p class="step-description">
+                            <span class="feature-heading">Design Documentation Review</span>
+                            Providing oversight to ensure design documentation is of top quality and aligns with client expectations.
+                        </p>
+                        <p class="step-description">
+                            <span class="feature-heading">Programme Management</span>
+                            Establishing a schedule with key milestones for timely delivery.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <h3 class="step-title">Construction</h3>
+                        <p class="step-description">
+                            <span class="feature-heading">Contract Administration</span>
+                            Managing the head contract and performing contractual assessments.
+                        </p>
+                        <p class="step-description">
+                            <span class="feature-heading">Commercial Matters</span>
+                            Addressing and resolving any commercial issues that arise during the project.
+                        </p>
+                        <p class="step-description">
+                            <span class="feature-heading">Quality Assurance</span>
+                            Ensuring high construction standards.
+                        </p>
+                        <p class="step-description">
+                            <span class="feature-heading">Client Reporting</span>
+                            Regular updates to keep clients informed.
+                        </p>
+                        <p class="step-description">
+                            <span class="feature-heading">Client Coordination</span>
+                            Facilitating seamless client-builder communication.
+                        </p>
+                    </div>
+                    <div class="step-number">3</div>
+                    <div class="step-image">
+                        <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/665bbd393c580e573d92dbdd_construction_2486950.png" alt="Construction" style="width: 100%;">
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/66eba279b9565bc62a8793d1_undraw_percentages_re_a1ao.svg" alt="Handover" style="width: 100%;">
+                    </div>
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Handover</h3>
+                        <p class="step-description">
+                            <span class="feature-heading">Final Inspection and Quality Assurance</span>
+                            Conducting thorough inspections to confirm all specifications and quality standards are met.
+                        </p>
+                        <p class="step-description">
+                            <span class="feature-heading">Post-Project Review</span>
+                            Evaluating project outcomes against initial objectives to offer valuable insights for future projects.
+                        </p>
+                        <p class="step-description">
+                            <span class="feature-heading">Financial Reconciliation</span>
+                            Providing a detailed accounting of all project expenditures, settling outstanding financial matters and finalising payments.
+                        </p>
+                        <p class="step-description">
+                            <span class="feature-heading">Defects Liability Management</span>
+                            Managing the rectification of any defects identified during the liability period.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader Script -->
+    <script src="./assets/js/components.js"></script>
 </body>
 </html>

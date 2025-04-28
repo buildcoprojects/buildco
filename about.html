@@ -5,42 +5,270 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUILD CO PROJECTS | About Us</title>
     <meta name="description" content="Project & Development Management for Civil, Domestic & Commercial Projects in Melbourne, Victoria - Discover our commitment to excellence - Build Co Projects.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.buildcoprojects.com.au/about.html">
     <meta property="og:title" content="BUILD CO PROJECTS | About Us">
     <meta property="og:description" content="Project & Development Management for Civil, Domestic & Commercial Projects in Melbourne, Victoria - Discover our commitment to excellence - Build Co Projects.">
     <meta property="og:image" content="./assets/images/build-co-preview.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.buildcoprojects.com.au/about.html">
+    <meta property="twitter:title" content="BUILD CO PROJECTS | About Us">
+    <meta property="twitter:description" content="Project & Development Management for Civil, Domestic & Commercial Projects in Melbourne, Victoria - Discover our commitment to excellence - Build Co Projects.">
+    <meta property="twitter:image" content="./assets/images/build-co-preview.png">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <!-- Placeholder for JSON-LD or additional SEO elements -->
+
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="./assets/css/components.css">
+
+    <style>
+        /* About Page Specific Styles */
+        .hero-section {
+            position: relative;
+            padding: 120px 0 80px;
+            background-color: #141312;
+            overflow: hidden;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .column-content {
+            max-width: 100%;
+        }
+
+        .column-content h1 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            color: #FF6B00;
+            text-align: left;
+            line-height: 1.2;
+        }
+
+        .column-content h2 {
+            text-align: left;
+            font-size: 36px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .column-content h2:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #FF6B00;
+            margin: 15px 0 0;
+            border-radius: 2px;
+        }
+
+        .column-content p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+
+        .dark-section {
+            background-color: #0f0f0f;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .section h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #FF6B00;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .text-center {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .value-card {
+            background: linear-gradient(145deg, #232323, #1a1a1a);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 107, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 107, 0, 0.3);
+        }
+
+        .value-icon {
+            font-size: 36px;
+            color: #FF6B00;
+            margin-bottom: 20px;
+        }
+
+        .value-heading {
+            font-size: 18px;
+            color: white;
+            margin: 0;
+        }
+
+        .feature-list {
+            padding: 0;
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .feature-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background-color: #FF6B00;
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+
+        .column-image-container {
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .bg-image {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: transform 0.3s ease;
+        }
+
+        .column-image-container:hover .bg-image {
+            transform: scale(1.05);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #FF6B00;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #e05a00;
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 18px;
+        }
+
+        .btn-center {
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Media queries */
+        @media screen and (max-width: 991px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .column-content h1 {
+                font-size: 36px;
+            }
+
+            .column-content h2 {
+                font-size: 30px;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .column-image-container {
+                height: 300px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .values-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .value-card {
+                padding: 20px;
+                min-height: 150px;
+            }
+
+            .hero-section {
+                padding: 100px 0 60px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="index.html" class="logo">
-                    <img src="assets/images/buildco-logo.png" alt="Build Co Projects Logo">
-                </a>
-                <nav class="nav">
-                    <ul class="nav-list">
-                        <li><a href="index.html" class="nav-link">HOME</a></li>
-                        <li><a href="about.html" class="nav-link">ABOUT</a></li>
-                        <li><a href="construction.html" class="nav-link">CONSTRUCTION</a></li>
-                        <li><a href="project-management.html" class="nav-link">PROJECT MANAGEMENT</a></li>
-                        <li><a href="fixed-fee-permit-packages.html" class="nav-link">FIXED FEE PERMITS</a></li>
-                        <li><a href="contact.html" class="nav-link">CONTACT</a></li>
-                    </ul>
-                </nav>
-                <div class="mobile-nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
 
     <main>
         <!-- About Hero Section -->
@@ -53,8 +281,8 @@
                         <p>Our expertise spans early-stage planning, design, procurement, construction, and the defect liability period.</p>
                         <p>We are committed to guiding and assisting our clients throughout their entire journey, ensuring successful project delivery at every stage.</p>
                     </div>
-                    <div>
-                        <img src="assets/images/building-illustration.svg" alt="Building illustration" class="column-image">
+                    <div class="column-image">
+                        <img src="https://ext.same-assets.com/2215866940/2270019936.svg" alt="Building illustration" style="width: 100%;">
                     </div>
                 </div>
             </div>
@@ -64,15 +292,15 @@
         <section class="section dark-section">
             <div class="container">
                 <div class="two-column">
-                    <div>
-                        <img src="assets/images/mission-illustration.svg" alt="Mission illustration" class="column-image">
+                    <div class="column-image">
+                        <img src="https://ext.same-assets.com/2215866940/2848011219.svg" alt="Mission illustration" style="width: 100%;">
                     </div>
                     <div class="column-content">
-                        <h2 class="left-aligned">Our Mission</h2>
+                        <h2>Our Mission</h2>
                         <p>Build Co aims to be a renowned developer, recognised for consistently delivering quality commercial outcomes that enable our clients to succeed. We prioritise people in our operations, creating an exceptional environment that fosters success for employees, partners, consultants, and clients in their professional and personal endeavours.</p>
-                        
+
                         <p>Client satisfaction is at the core of our operations, achieved through transparent communication and regular updates. We engage with local communities, supporting economic growth by sourcing materials and labor locally.</p>
-                        
+
                         <p>Our strategic plan includes expanding our portfolio with diverse projects and forming strategic partnerships to enhance our services and reach.</p>
                     </div>
                 </div>
@@ -84,35 +312,35 @@
             <div class="container">
                 <h2>Our Values</h2>
                 <p class="text-center">At Build Co, our values guide everything we do. These principles shape our approach to project management and construction.</p>
-                
+
                 <div class="values-grid">
-                    <div class="value-card animate-on-scroll">
-                        <img src="assets/images/people-icon.svg" alt="People icon" class="value-icon">
+                    <div class="value-card">
+                        <div class="value-icon">👥</div>
                         <h5 class="value-heading">People</h5>
                     </div>
-                    
-                    <div class="value-card animate-on-scroll">
-                        <img src="assets/images/innovation-icon.svg" alt="Innovation icon" class="value-icon">
+
+                    <div class="value-card">
+                        <div class="value-icon">💡</div>
                         <h5 class="value-heading">Innovation</h5>
                     </div>
-                    
-                    <div class="value-card animate-on-scroll">
-                        <img src="assets/images/performance-icon.svg" alt="Performance icon" class="value-icon">
+
+                    <div class="value-card">
+                        <div class="value-icon">📈</div>
                         <h5 class="value-heading">Performance</h5>
                     </div>
-                    
-                    <div class="value-card animate-on-scroll">
-                        <img src="assets/images/quality-icon.svg" alt="Quality icon" class="value-icon">
+
+                    <div class="value-card">
+                        <div class="value-icon">✓</div>
                         <h5 class="value-heading">Quality</h5>
                     </div>
-                    
-                    <div class="value-card animate-on-scroll">
-                        <img src="assets/images/passion-icon.svg" alt="Passion icon" class="value-icon">
+
+                    <div class="value-card">
+                        <div class="value-icon">❤️</div>
                         <h5 class="value-heading">Passion</h5>
                     </div>
-                    
-                    <div class="value-card animate-on-scroll">
-                        <img src="assets/images/challenge-icon.svg" alt="Challenge icon" class="value-icon">
+
+                    <div class="value-card">
+                        <div class="value-icon">🏆</div>
                         <h5 class="value-heading">Challenge</h5>
                     </div>
                 </div>
@@ -124,14 +352,14 @@
             <div class="container">
                 <h2>Our Approach</h2>
                 <p class="text-center">We believe in combining technical expertise with a client-focused approach to deliver exceptional outcomes.</p>
-                
+
                 <div class="two-column">
                     <div class="column-content">
                         <h3>Client-Centric Project Delivery</h3>
                         <p>Our team approaches each project with a focus on understanding your unique needs and objectives. We take the time to listen, ensuring that our solutions align perfectly with your vision.</p>
-                        
+
                         <p>With decades of combined experience in construction and project management, we bring valuable insights and proven methodologies to every project we undertake.</p>
-                        
+
                         <ul class="feature-list">
                             <li class="feature-item">Personalized service tailored to your specific needs</li>
                             <li class="feature-item">Regular communication and progress updates</li>
@@ -141,7 +369,7 @@
                         </ul>
                     </div>
                     <div class="column-image-container">
-                        <div class="bg-image" style="background-image: url('assets/images/team-collaboration.jpg');"></div>
+                        <div class="bg-image" style="background-image: url('https://cdn.prod.website-files.com/665310cc7940eb6122f35b1b/665bbc2d57ce0f12b07bb412_interview_14781521.png');"></div>
                     </div>
                 </div>
             </div>
@@ -157,65 +385,10 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <img src="assets/images/buildco-logo.png" alt="Build Co Projects" class="footer-logo">
-                    <p class="footer-info">BUILD CO PROJECTS PTY LTD</p>
-                    <p class="footer-info">ACN: 677 960 735</p>
-                    <p class="footer-info">ABN: 44 677 960 735</p>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html" class="footer-link">HOME</a></li>
-                        <li><a href="about.html" class="footer-link">ABOUT</a></li>
-                        <li><a href="construction.html" class="footer-link">CONSTRUCTION</a></li>
-                        <li><a href="project-management.html" class="footer-link">PROJECT MANAGEMENT</a></li>
-                        <li><a href="fixed-fee-permit-packages.html" class="footer-link">FIXED FEE PERMITS</a></li>
-                        <li><a href="contact.html" class="footer-link">CONTACT</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>Contact Us</h4>
-                    <div class="contact-item">
-                        <img src="assets/images/email-icon.png" alt="Email" class="contact-icon">
-                        <div class="contact-text">
-                            <a href="mailto:enquiries@buildcoprojects.com.au">enquiries@buildcoprojects.com.au</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <img src="assets/images/phone-icon.png" alt="Phone" class="contact-icon">
-                        <div class="contact-text">
-                            <a href="tel:+61499144033">0499 144 033</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="legal-block">
-                <div class="legal-text">© 2024 Build Co Projects Pty Ltd. All Rights Reserved.</div>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/build.co_projects/" target="_blank" class="social-link">
-                        <img src="assets/images/instagram-icon.svg" alt="Instagram" class="social-icon">
-                    </a>
-                    <a href="https://www.facebook.com/subconnectgroup" target="_blank" class="social-link">
-                        <img src="assets/images/facebook-icon.svg" alt="Facebook" class="social-icon">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
 
-    <a href="#top" class="back-to-top" id="backToTop">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </a>
-
-    <script src="assets/js/main.js"></script>
+    <!-- Component Loader Script -->
+    <script src="./assets/js/components.js"></script>
 </body>
 </html>
