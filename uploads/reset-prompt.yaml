@@ -1,0 +1,47 @@
+reset_prompt:
+  project: "Build Co Projects — Web Rebuild Reset"
+  mission: "Fully replicate www.buildcoprojects.com.au with pixel-level fidelity."
+
+  master_reference: "www.buildcoprojects.com.au"
+
+  key_directives:
+    - "Provided HTML is a starting structure only."
+    - "If files are incomplete, rebuild by referencing the live site."
+    - "Homepage must be index.html, not default to permit page."
+
+  page_requirements:
+    - "Homepage (index.html)"
+    - "About (about.html)"
+    - "Construction (construction.html)"
+    - "Project Management (project-management.html)"
+    - "Fixed Fee Permits (fixed-fee-permit-packages.html)"
+    - "Contact (contact.html)"
+
+  navbar_footer:
+    - "Manually replicate navbar and footer if missing."
+    - "Navbar must match layout, hover effects, and responsiveness."
+
+  visual_rules:
+    - "No style modernisations or visual improvisations allowed."
+    - "Strict replication of fonts, colours, spacing, responsiveness."
+
+  form_and_checkout:
+    - "Buy Now buttons: Stripe pre-set checkout amounts."
+    - "Permit Form: Calculate total dynamically, trigger Stripe session."
+    - "Fix form submission errors if present."
+
+  assets_and_seo:
+    - "Ensure all assets load correctly from /assets/images/."
+    - "Inject SEO meta, OpenGraph, Twitter Card, JSON-LD into all pages."
+
+  deployment:
+    publish_directory: "buildco"
+    functions_directory: "netlify/functions"
+    hosting: "Static via Netlify"
+
+  critical_focus:
+    - "Mission is not to 'fix' — it is to 'perfectly replicate'."
+    - "Visual verification against live site is mandatory."
+    - "Stripe payment flows must be fully operational."
+
+  confirmation_required: "Understood. Rebuilding to match www.buildcoprojects.com.au exactly."
